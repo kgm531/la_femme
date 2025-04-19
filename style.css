@@ -1,0 +1,384 @@
+body {
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+    bottom: 20px;
+  }
+  
+  .header {
+    padding: 20px 0;
+    color: #fff;
+  }
+  
+  /*logo*/
+  .logo {
+    font-size: 28px;
+    margin: 0;
+  }
+  .logo img{
+    height: 100px;
+    width: 300px;
+    position: relative;
+    top: 30px;
+    animation: logoEntrance 1s ease forwards;
+  transition: transform .3s ease, box-shadow 0.3s ease;
+  }
+  .logo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(236, 94, 142, 0.3);
+    animation: wiggle .5s ease-in-out;
+  }
+  @keyframes logoEntrance {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(3deg); }
+    50% { transform: rotate(-3deg); }
+    75% { transform: rotate(2deg); }
+    100% { transform: rotate(0deg); }
+  }
+    /* ****** Welcome Slides Area Start */
+        .poster {
+          margin-top:-30px ;
+          position: relative;
+          width: 100%;
+          height: 100vh;
+          overflow: hidden;
+        }
+    
+        .poster img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          opacity: 0;
+          transition: opacity 1s ease-in-out;
+          border-radius: 10px;
+          
+          
+        }
+    
+        .poster img.active {
+          opacity: 1;
+        }
+    
+        .text-overlay {
+          position: absolute;
+          z-index: 2;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          color: white;
+          background-color: rgba(0, 0, 0, 0.4);
+          padding: 30px;
+          border-radius: 10px;
+        }
+    
+        .text-overlay h2 {
+          font-size: 32px;
+          margin-bottom: 20px;
+        }
+    
+        .buttons-container {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+    
+        .row {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+        }
+    
+        .row button {
+          padding: 10px 20px;
+          font-size: 16px;
+          border: none;
+          border-radius: 5px;
+          background-color: white;
+          color: #333;
+          cursor: pointer;
+          transition: background 0.3s;
+        }
+    
+        .row button:hover {
+          background-color: #ddd;
+        }
+             /* === NavBar أنيق لموقع إكسسوارات نسائية === */
+             .nav {
+               display: flex;
+               flex-wrap: wrap;
+               justify-content: center;
+               align-items: center;
+               gap: 16px;
+               padding: 14px 25px;
+               font-size: 18px;
+               background: linear-gradient(90deg, #fff0f5, #fefefe);
+               box-shadow: 0 4px 12px rgba(255, 192, 203, 0.2);
+               border-radius: 12px;
+               margin: 10px auto;
+               direction: rtl;
+               max-width: 90%;
+               transition: all 0.3s ease-in-out;
+             }
+      
+             .nav a {
+               color: #d63384;
+               text-decoration: none;
+               font-weight: 600;
+               padding: 10px 20px;
+               background-color: #fff;
+               border: 2px solid #d63384;
+               border-radius: 25px;
+               transition: all 0.3s ease;
+               font-family: 'Cairo', sans-serif;
+               box-shadow: 0 2px 5px rgba(214, 51, 132, 0.15);
+               position: relative;
+               overflow: hidden;
+             }
+      
+             .nav a::before {
+               content: "";
+               position: absolute;
+               width: 0;
+               height: 100%;
+               top: 0;
+               right: 0;
+               background: linear-gradient(to left, #f8bbd0, #fce4ec);
+               z-index: 0;
+               transition: width 0.3s ease;
+             }
+      
+             .nav a:hover::before {
+               width: 100%;
+             }
+      
+             .nav a:hover {
+               color: #fff;
+               border-color: #f06292;
+               z-index: 1;
+             }
+      
+             /* === Mobile Style === */
+             @media (max-width: 480px) {
+               .nav {
+                 flex-direction: column;
+                 align-items: center;
+                 padding: 12px;
+                 gap: 10px;
+                 background: linear-gradient(180deg, #fff0f5, #fefefe);
+                 border-radius: 0;
+               }
+      
+               .nav a {
+                 width: 100%;
+                 text-align: center;
+                 font-size: 16px;
+                 padding: 12px 20px;
+               }
+             }
+  
+  .hero {
+    margin-top: 30px;
+    background-color: #30b8b3;
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    bottom: 5px;
+  }
+  
+  .hero h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+  
+  .hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .btn-primary {
+    background-color: #ec5e8e;
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.1s ease-in-out;
+    display: inline-block;
+  }
+  .btn-primary:hover {
+    color: #fff;
+    transform: scale(1.1) rotate(-2deg);
+  }
+  
+  .services {
+    padding: 60px 0;
+    background-color: #fefefe;
+    text-align: center;
+  }
+  /*الكلام الرئيس زي الملابس , الاكسسوارات*/
+
+  .section-title {
+    font-size: 38px;
+    color: #000;
+    margin-bottom: 40px;
+    transition: all 0.4s ease-in-out;
+    display: inline-block; /* مهم عشان الأنيميشن تشتغل صح */
+  }
+  
+  .section-title:hover {
+    color: #fff;
+    transform: scale(1.1) rotate(-2deg);
+  }
+  
+  @keyframes funBounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.8) rotate(-5deg);
+    }
+    50% {
+      transform: scale(1.05) rotate(3deg);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+  }
+  
+  
+  .section-title2 {
+  font-size: 28px;
+  color: #000;
+  margin-bottom: 40px;
+  border: 2px solid #ec5e8e;
+  padding: 20px;
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
+  width: 100%;               /* ياخد عرض الكتلة */
+  text-align: center;        /* وسط الكلام */
+  box-sizing: border-box;    /* padding + border تدخل في العرض */
+  display: block;            /* عشان ياخد صف لوحده */
+}
+
+  .section-title2:hover {
+    background-color: #30b8b3;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(236, 94, 142, 0.3);
+  }
+  
+  
+  
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .card {
+    background-color: #fff;
+    border: 2px solid #30b8b3;
+    border-radius: 15px;
+    padding: 20px;
+    width: 280px;
+    transition: 0.3s;
+  }
+ 
+  
+  .card:hover {
+    background-color: #30b8b3;
+    color: #fff;
+  }
+  .services{
+    background: #ec5e8e;
+    margin-top: 20px;
+  }
+
+  /*بداية الصور*/
+  .service-section {
+    padding: 60px 0;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    text-align: center;
+  }
+  .section-desc {
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  
+ 
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    /* 3 أعمدة على الموبايل */
+    gap: 10px;
+    max-width: 100%;
+    text-align: center;
+    padding: 20px;
+  }
+ 
+  .item {
+    width: 100;
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+  }
+ 
+  .item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .gallery[data-category="photos-cosemetics"] .item img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery[data-category="photos"] .item img:hover {
+  transform: scale(1.05);
+}
+ .item:hover {
+   transform: scale(1.05) translateY(-5px);
+   filter: brightness(0.9);
+   transition: 0.3s ease-in-out;
+ }
+
+  
+  .footer {
+    background-color: #ec5e8e;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+  }
+  
