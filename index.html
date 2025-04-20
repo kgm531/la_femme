@@ -20,6 +20,23 @@
 <h3>متاح التوصيل</h3>
 </div>
 
+<!--whatsapp icon-->
+<a href="https://wa.me/01212348798" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!--scroll icon-->
+<!-- Scroll Up -->
+<button class="scroll-button scroll-up" onclick="scrollToTop()">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<button class="scroll-button scroll-down" onclick="scrollToBottom()">
+  <i class="fas fa-arrow-down"></i>
+</button>
+
+
+
   <!-- Header -->
   <header class="header">
     <div class="container">
@@ -27,8 +44,12 @@
         <a href="#" class="logo">
             <img src="img\logo2.png" alt="La Femme Logo">
           </a>
-          <input type="text" class="search-input" placeholder="ابحث هنا...">
-
+          <div class="search-container">
+            <div class="search-box">
+              <input type="text" class="search-input" placeholder="ابحث هنا...">
+            </div>
+          </div>
+          
         
 <div class="nav">
   <a href="index.html">الرئيسية</a>
@@ -108,6 +129,9 @@
     <div class="container">
       <h3 class="section-title2">مستحضرات تجميل وعطور</h3>
       <p class="section-desc">فريقنا يقدم لكِ أجمل إطلالة في المناسبات الخاصة.</p>
+      <div class="section-image">
+        <img src="img/مستحضرات تجميل.jpg" alt="جمال وأناقة" />
+      </div>
       <div class="gallery" data-category="photos-cosemetics">
         <div class="item">
           <img src="img/1.jpeg" alt="ملابس 1"  />
@@ -213,6 +237,9 @@
     <div class="container">
       <h3 class="section-title2">الملابس</h3>
       <p class="section-desc">متوفر لدينا احدث صيحات الملابس بأحدث الاطلالات دائما</p>
+      <div class="section-image">
+        <img src="img/bg_2.jpg" alt="جمال وأناقة" />
+      </div>
       <div class="gallery" data-category="photos-cosemetics">
         <div class="item">
           <img src="img/1.jpeg" alt="ملابس 1"  />
@@ -318,6 +345,9 @@
     <div class="container">
       <h3 class="section-title2">الحقائب والأحذية</h3>
       <p class="section-desc">وجود قسم خاص لكل ما هو جديد في عالم الحقائب والأحذية</p>
+      <div class="section-image">
+        <img src="img/shoes&bags.jpg" alt="جمال وأناقة" />
+      </div>
       <div class="gallery" data-category="photos-cosemetics">
         <div class="item">
           <img src="img/1.jpeg" alt="ملابس 1"  />
@@ -424,6 +454,9 @@
     <div class="container">
       <h3 class="section-title2">الطرح</h3>
       <p class="section-desc">متوفر جميع مستلزمات الحجاب والجديد في عالم الطرح</p>
+      <div class="section-image">
+        <img src="img/طرح.jpg" alt="جمال وأناقة" />
+      </div>
       <div class="gallery" data-category="photos-cosemetics">
         <div class="item">
           <img src="img/1.jpeg" alt="ملابس 1"  />
@@ -530,6 +563,9 @@
     <div class="container">
       <h3 class="section-title2">الاكسسوارات</h3>
       <p class="section-desc">متعي بذوق مختلف وفريد مع احدث الاكسسوارات</p>
+      <div class="section-image">
+        <img src="img/اكسسوارات حريمي.jpg" alt="جمال وأناقة" />
+      </div>
       <div class="gallery" data-category="photos-cosemetics">
         <div class="item">
           <img src="img/1.jpeg" alt="ملابس 1"  />
@@ -632,7 +668,6 @@
     
   </section>
   
-  <!-- كرر هذا البلوك للخدمات الأخرى: الحقائب والأحذية، الطرح، الاكسسوارات -->
   
 
   <!-- Footer -->
@@ -677,6 +712,17 @@
     }
 
     setInterval(showNextSlide, 3000); // كل 3 ثوانٍ
-  </script>
+ 
+    
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function scrollToBottom() {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  }
+
+
+ </script>
 </body>
 </html>

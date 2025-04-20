@@ -5,99 +5,6 @@ body {
     color: #333;
   }
   
-  /*whatsapp icon*/
-  .whatsapp-float {
-    position: fixed;
-    bottom: 160px;
-    right: 20px; /* بدل left: 20px */
-    width: 55px;
-    height: 55px;
-    background-color: #25d366;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 28px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    z-index: 1001;
-    transition: transform 0.3s ease;
-  }
-  
-  .whatsapp-float:hover {
-    transform: scale(1.1);
-  }
-  
-  
-
-  /*scroll icon*/
-  .scroll-button {
-    position: fixed;
-    /* Keep buttons fixed on the screen */
-    width: 50px;
-    height: 50px;
-    background-color: #ec5e8e;
-    /* Vibrant red color */
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    /* Make buttons circular */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Add shadow for depth */
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 100;
-    /* Ensure buttons stay above content */
-  }
-
-  /* Hover Effect */
-  .scroll-button:hover {
-    background-color: #30b8b3;
-    /* Darker red on hover */
-    transform: scale(1.1);
-    /* Slight zoom effect */
-  }
-
-  /* Scroll Up Button */
-  .scroll-up {
-    bottom: 80px;
-    /* Position button 80px from the bottom */
-    right: 20px;
-    /* Position button 20px from the right */
-  }
-
-  /* Scroll Down Button */
-  .scroll-down {
-    bottom: 20px;
-    /* Position button 20px from the bottom */
-    right: 20px;
-    /* Position button 20px from the right */
-  }
-
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .scroll-button {
-      width: 40px;
-      height: 40px;
-      font-size: 16px;
-    }
-  }
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-}
-  
-  
-  
   
     /* ****** Welcome Slides Area Start */
         .poster {
@@ -284,36 +191,22 @@ body {
 }
 
     /*search button*/
-    .search-container {
-      display: flex;
-      justify-content: center;
-      margin: 20px auto;
-      
-    }
-    
-    .search-box {
-      position: relative;
-      width: fit-content;
-    }
-    
     .search-input {
-      padding: 10px 40px 10px 15px; /* زيادة padding عشان نسيب مساحة للأيقونة */
+      padding: 8px 12px;
       border: 2px solid #d63384;
       border-radius: 20px;
       font-size: 25px;
       outline: none;
       transition: box-shadow 0.3s ease;
-      width: 300px;
       position: relative;
-      right: 500px;
-      bottom: 30px;
+      right: 700px;
+      bottom: -43px;
+  
     }
-    
+  
     .search-input:focus {
       box-shadow: 0 0 5px #e91e63;
     }
-    
-    
 
 /* =============== شريط التنقل =============== */
 .nav {
@@ -371,7 +264,7 @@ body {
 /* =============== استجابة للموبايل والتابلت =============== */
 @media (max-width: 768px) {
   .nav {
-      display: grid;
+      display:flex;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
       padding: 20px;
@@ -598,24 +491,9 @@ body {
     color: #666;
     margin-bottom: 30px;
   }
-    
-  .section-image {
-    margin: 20px 0 40px;
-    text-align: center;
-  }
   
-  .section-image img {
-    width: 100%;
-    max-width: 1000px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.4s ease-in-out;
-  }
   
-  .section-image img:hover {
-    transform: scale(1.02);
-  }
-  
+ 
   
   .gallery {
     display: grid;
