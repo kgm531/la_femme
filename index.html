@@ -9,29 +9,36 @@
   <!-- Font Awesome للأيقونات -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
 
 </head>
 <body>
-
+<!--hash-->
+<div class="hash">
+<h3>متاح التوصيل</h3>
+</div>
 
   <!-- Header -->
   <header class="header">
     <div class="container">
         <!--logo-->
         <a href="#" class="logo">
-            <img src="img\logo2.png" alt="La Femme Logo">
+            <img src="img\logo.png" alt="La Femme Logo">
           </a>
-          
+          <input type="text" class="search-input" placeholder="ابحث هنا...">
+
+        
 <div class="nav">
-  <a href="#home">الرئيسية</a>
-  <a href="#about">من نحن</a>
-  <a href="#services">الخدمات</a>
-  <a href="#contact">اتصل بنا</a>
+  <a href="index.html">الرئيسية</a>
+  <a href="about.html">من نحن</a>
+  <a href="services.html">الخدمات</a>
+  <a href="contact.html">اتصل بنا</a>
 </div>
+</header>
 
-
-  </header>
+  
 
   <!--poster-->
   <div class="poster">
@@ -64,7 +71,6 @@
       <a href="#" class="btn-primary">ابدئي الآن</a>
     </div>
   </section>
-
  
 
   <!-- Services Section -->
@@ -630,11 +636,36 @@
   
 
   <!-- Footer -->
+ 
   <footer class="footer">
-    <div class="container">
-      <p>© 2025 La Femme - جميع الحقوق محفوظة</p>
+    <div class="container7">
+      <div class="column">
+        <h3 id="contact-title">Contact Information</h3>
+        <p>📞 <span id="phone-text">Phone:</span> <a href="tel:01212348798">01212348798</a></p>
+        <p>📞 <span id="phone-text">Phone:</span> <a href="tel:01017102110">01017102110</a></p>
+      </div>
+      <div class="column">
+        <h3 id="important-links">Important Links</h3>
+        <a href="#" id="privacy-policy">Privacy Policy</a>
+        <br>
+        <a href="#" id="terms-of-use">Terms of Use</a>
+      </div>
+      <div class="column social">
+        <h3 id="follow-us">Follow Us</h3>
+        <a href="https://www.facebook.com/share/16AodzZejo/"> <i class="fab fa-facebook-f"></i></a>
+        
+        
+        <br>
+        <a href="https://www.instagram.com/lafemme_woman?igsh=ejhuY3IybGpxanM4"> <i class="fab fa-instagram"></i></a>
+<br>
+<a href="https://www.tiktok.com/@osama.elbannan?_t=ZS-8uchrhB8KzY&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>      
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2025 <span id="all-rights">All Rights Reserved</span> | <span id="kgm-marketing">KGM Marketing</span>
     </div>
   </footer>
+
   <script>
     const slides = document.querySelectorAll(".poster img");
     let current = 0;

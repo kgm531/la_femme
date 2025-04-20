@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>من نحن | La Femme</title>
+        <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Cairo', sans-serif;
+            background-color: #fefefe;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        /* ===== About Section ===== */
+        .about-container {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-container h2 {
+            color: #d63384;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .about-container p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: #30b8b3;
+            font-weight: bold;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background-color: #30b8b3;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav {
+                margin-top: 15px;
+            }
+
+            .nav a {
+                font-size: 14px;
+                padding: 8px 10px;
+            }
+
+            .about-container {
+                padding: 40px 15px;
+            }
+
+            .about-container h2 {
+                font-size: 22px;
+            }
+
+            .about-container p {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                height: 50px;
+            }
+
+            .nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <img src="img/logo2.png" alt="La Femme Logo">
+            </a>
+
+            <!-- Navigation -->
+            <div class="nav">
+                <a href="index.html">الرئيسية</a>
+                <a href="about.html">من نحن</a>
+                <a href="services.html">الخدمات</a>
+                <a href="contact.html">اتصل بنا</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-container">
+        <h2>من نحن</h2>
+        <p>
+            نحن في <span class="highlight">La Femme</span> نؤمن بأن كل امرأة تستحق لمسة جمال فريدة تعبّر عن شخصيتها.
+        </p>
+        <p>
+            نقدم لكِ تشكيلة واسعة من <span class="highlight">الإكسسوارات العصرية</span> المصممة بعناية وجودة عالية
+            لترافقكِ في كل لحظة مميزة.
+        </p>
+        <p>
+            هدفنا هو منحك تجربة تسوق ممتعة وسهلة، مع منتجات تليق بذوقك الرفيع وأناقتك.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        جميع الحقوق محفوظة © 2025 - La Femme
+    </footer>
+
+</body>
+
+</html>

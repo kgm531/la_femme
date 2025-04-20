@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>خدماتنا - La Femme</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+body {
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* ======= Section Title ======= */
+.section-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #d63384;
+    font-size: 36px;
+    margin: 0; /* إزالة الهوامش */
+}
+
+/* ======= Services Grid ======= */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* عمود واحد في البداية لجميع الأجهزة */
+    gap: 25px; /* مسافة بين الصفوف */
+    padding: 0 20px 50px;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* ======= Card Styling ======= */
+.flip-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* التأكد من أن البطاقة يمكنها احتواء النص بشكل صحيح */
+}
+
+.flip-card {
+    perspective: 1000px;
+}
+
+/* تصميم البطاقة الداخلية */
+.flip-inner {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.flip-front {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    text-align: center;
+    border-top: 5px solid #30b8b3;
+}
+
+.flip-front h3 {
+    color: #d63384;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.flip-front p {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.order-button {
+    background-color: #d63384;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.order-button:hover {
+    background-color: #b81d6d;
+}
+
+.flip-back {
+    background-color: #fff;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;  /* توسيط الصورة أفقياً */
+    align-items: center;      /* توسيط الصورة عمودياً */
+}
+
+.flip-back img {
+    justify-content: center;  /* توسيط الصورة أفقياً */
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    
+    object-fit: cover; /* لتغطية كامل المساحة بدون تشويه */
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.4); /* زيادة قوة الظل من الأسفل إلى الأعلى */
+}
+
+/* إضافة اسم الخدمة فوق الصورة */
+.flip-front .service-name {
+    position: absolute;
+    bottom: 15px; /* وضع النص في الأسفل */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6); /* جعل الخلفية أكثر قوة */
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 20px; /* زيادة حجم النص */
+    font-weight: bold;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* إضافة تأثير ظل حول النص */
+}
+.center-wrapper {
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ======= Responsive ======= */
+
+/* في التابلت والجوال: عرض بطاقة واحدة في كل صف مع فراغ جانبي */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* عمود واحد */
+        padding: 0 15px 40px; /* تقليل الحواف الجانبية */
+    }
+
+    .flip-card {
+        margin-top: 20px;
+        width: 90%; /* تقليل عرض البطاقة على التابلت ليكون أصغر */
+    }
+
+    .section-title {
+        font-size: 26px;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .flip-front h3 {
+        font-size: 16px;
+    }
+
+    .flip-front p {
+        font-size: 12px;
+    }
+
+    .order-button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    /* تقليل ارتفاع البطاقة على التابلت */
+    .flip-inner {
+        height: 250px; /* تقليل ارتفاع البطاقة على التابلت */
+    }
+}
+
+@media (max-width: 480px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* عمود واحد للجوال */
+        padding: 0 15px 30px; /* تقليل الحواف الجانبية */
+    }
+
+    .flip-card {
+        margin-top: 20px;
+        width: 85%; /* تقليل عرض البطاقة أكثر على الموبايل */
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    .flip-front h3 {
+        font-size: 14px;
+    }
+
+    .flip-front p {
+        font-size: 12px;
+    }
+
+    .order-button {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+
+    /* تقليل ارتفاع البطاقة على الموبايل */
+    .flip-inner {
+        height: 200px; /* تقليل ارتفاع البطاقة على الموبايل */
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="img/logo2.png" alt="La Femme Logo">
+            </a>
+            <div class="nav">
+                <a href="index.html">الرئيسية</a>
+                <a href="about.html">من نحن</a>
+                <a href="services.html">الخدمات</a>
+                <a href="contact.html">اتصل بنا</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Title -->
+    <h2 class="section-title">خدماتنا</h2>
+<div class="center-wrapper">
+
+    <!-- Services Grid -->
+    <div class="services-grid">
+
+        <!-- Looping Cards -->
+        <div class="flip-card">
+            <div class="flip-inner">
+                <div class="flip-front">
+                    <h3>العطور والأحذية</h3>
+                    <p>مجموعة عطور مميزة وأحذية راقية تناسب كل الأذواق.</p>
+                    <a href="#" class="order-button">اطلب الآن</a>
+                </div>
+                <div class="flip-back">
+                    <img src="img/shoes.jpg" alt="عطور وأحذية">
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-inner">
+                <div class="flip-front">
+                    <h3>الإكسسوارات</h3>
+                    <p>إكسسوارات أنيقة وعصرية تضيف لمسة جمال لإطلالتك.</p>
+                    <a href="#" class="order-button">اطلب الآن</a>
+                </div>
+                <div class="flip-back">
+                    <img src="img/accessories.jpg" alt="إكسسوارات">
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-inner">
+                <div class="flip-front">
+                    <h3>الطرح</h3>
+                    <p>أحدث تصاميم الطرح بألوان جذابة وجودة عالية.</p>
+                    <a href="#" class="order-button">اطلب الآن</a>
+                </div>
+                <div class="flip-back">
+                    <img src="img/scarves.jpg" alt="طرح">
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-inner">
+                <div class="flip-front">
+                    <h3>الملابس</h3>
+                    <p>ملابس نسائية تناسب كل المناسبات والأذواق.</p>
+                    <a href="#" class="order-button">اطلب الآن</a>
+                </div>
+                <div class="flip-back">
+                    <img src="img/clothes.jpg" alt="ملابس">
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-inner">
+                <div class="flip-front">
+                    <h3>مستحضرات التجميل</h3>
+                    <p>مستحضرات تجميل أصلية لتعزيز جمالك الطبيعي.</p>
+                    <a href="#" class="order-button">اطلب الآن</a>
+                </div>
+                <div class="flip-back">
+                    <img src="img/makeup.jpg" alt="مستحضرات التجميل">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+    <!-- Flip Animation -->
+    <script>
+        setInterval(() => {
+            document.querySelectorAll('.flip-card').forEach(card => {
+                card.classList.toggle('flipped');
+            });
+        }, 5000);
+    </script>
+
+</body>
+
+</html>
