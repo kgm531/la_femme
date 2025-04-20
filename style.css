@@ -128,14 +128,17 @@ body {
 }
 
 /* =============== الشعار (اللوغو) =============== */
+/*logo*/
 .logo {
-  text-align: center;
-  margin-top: 60px;
+  font-size: 28px;
+  margin: 0;
 }
 
 .logo img {
-  max-width: 90%;
-  height: auto;
+  height: 100px;
+  width: 300px;
+  position: relative;
+  top: 73px;
   animation: logoEntrance 1s ease forwards;
   transition: transform .3s ease, box-shadow 0.3s ease;
 }
@@ -187,20 +190,23 @@ body {
   margin: 20px auto;
 }
 
-.search-input {
-  padding: 10px 16px;
-  border: 2px solid #d63384;
-  border-radius: 30px;
-  font-size: 18px;
-  outline: none;
-  transition: box-shadow 0.3s ease;
-  width: 100%;
-  max-width: 400px;
-}
-
-.search-input:focus {
-  box-shadow: 0 0 5px #e91e63;
-}
+    /*search button*/
+    .search-input {
+      padding: 8px 12px;
+      border: 2px solid #d63384;
+      border-radius: 20px;
+      font-size: 25px;
+      outline: none;
+      transition: box-shadow 0.3s ease;
+      position: relative;
+      right: 700px;
+      bottom: -43px;
+  
+    }
+  
+    .search-input:focus {
+      box-shadow: 0 0 5px #e91e63;
+    }
 
 /* =============== شريط التنقل =============== */
 .nav {
@@ -215,8 +221,6 @@ body {
   margin: 40px auto 20px;
   direction: rtl;
   max-width: 95%;
-  background: linear-gradient(135deg, #fff0f5, #ffffff);
-  box-shadow: 0 4px 8px rgba(214, 51, 132, 0.1);
   transition: all 0.3s ease-in-out;
 }
 
@@ -290,7 +294,7 @@ body {
     }
     
     .logo img {
-      margin-top: 60px;
+      margin-bottom: 60px;
       width: 80%;
       height: auto;
     }
