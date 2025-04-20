@@ -8,6 +8,10 @@
         <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         * {
             box-sizing: border-box;
@@ -47,16 +51,7 @@
             font-weight: bold;
         }
 
-        /* ===== Footer ===== */
-        footer {
-            background-color: #30b8b3;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 60px;
-            border-top-left-radius: 30px;
-            border-top-right-radius: 30px;
-        }
+        
 
         /* ===== Responsive ===== */
         @media (max-width: 768px) {
@@ -65,14 +60,7 @@
                 align-items: center;
             }
 
-            .nav {
-                margin-top: 15px;
-            }
-
-            .nav a {
-                font-size: 14px;
-                padding: 8px 10px;
-            }
+            
 
             .about-container {
                 padding: 40px 15px;
@@ -87,16 +75,7 @@
             }
         }
 
-        @media (max-width: 480px) {
-            .logo img {
-                height: 50px;
-            }
-
-            .nav {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
+        
     </style>
 </head>
 
@@ -136,8 +115,36 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        جميع الحقوق محفوظة © 2025 - La Femme
+    
+    <footer class="footer">
+        <div class="container7">
+            <div class="column">
+                <h3 id="contact-title">Contact Information</h3>
+                <p>📞 <span id="phone-text">Phone:</span> <a href="tel:01212348798">01212348798</a></p>
+                <p>📞 <span id="phone-text">Phone:</span> <a href="tel:01017102110">01017102110</a></p>
+            </div>
+            <div class="column">
+                <h3 id="important-links">Important Links</h3>
+                <a href="#" id="privacy-policy">Privacy Policy</a>
+                <br>
+                <a href="#" id="terms-of-use">Terms of Use</a>
+            </div>
+            <div class="column social">
+                <h3 id="follow-us">Follow Us</h3>
+                <a href="https://www.facebook.com/share/16AodzZejo/"> <i class="fab fa-facebook-f"></i></a>
+    
+    
+                <br>
+                <a href="https://www.instagram.com/lafemme_woman?igsh=ejhuY3IybGpxanM4"> <i
+                        class="fab fa-instagram"></i></a>
+                <br>
+                <a href="https://www.tiktok.com/@osama.elbannan?_t=ZS-8uchrhB8KzY&_r=1" target="_blank"><i
+                        class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 <span id="all-rights">All Rights Reserved</span> | <span id="kgm-marketing">KGM Marketing</span>
+        </div>
     </footer>
 
 </body>
