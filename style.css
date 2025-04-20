@@ -264,7 +264,7 @@ body {
 /* =============== استجابة للموبايل والتابلت =============== */
 @media (max-width: 768px) {
   .nav {
-      display: grid;
+      display:flex;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
       padding: 20px;
