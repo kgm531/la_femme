@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-
 body {
     font-family: 'Cairo', sans-serif;
     margin: 0;
@@ -28,111 +27,125 @@ body {
     align-items: center;
     color: #d63384;
     font-size: 36px;
-    margin: 20px 0; /* إضافة هامش فوق وتحت العنوان */
+    margin: 0; /* إزالة الهوامش */
 }
 
 /* ======= Services Grid ======= */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* الأعمدة التلقائية مع الحد الأدنى 250px لكل عمود */
-    gap: 20px; /* تقليل المسافة بين الأعمدة والصفوف */
-    padding: 20px; /* إضافة حواف متساوية */
-    max-width: 1000px;
+    grid-template-columns: 1fr; /* عمود واحد في البداية لجميع الأجهزة */
+    gap: 25px; /* مسافة بين الصفوف */
+    padding: 0 20px 50px;
+    max-width: 800px;
     margin: auto;
 }
 
 /* ======= Card Styling ======= */
-.container {
-    max-width: 1000px;
-    margin: 50px auto; /* تقليل المسافة العلوية والسفلية */
+.flip-card {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* تعديل المسافات بين العناصر */
+    align-items: center;
+    justify-content: center;
+    position: relative; /* التأكد من أن البطاقة يمكنها احتواء النص بشكل صحيح */
 }
 
-.card {
+.flip-card {
+    perspective: 1000px;
+}
+
+/* تصميم البطاقة الداخلية */
+.flip-inner {
     position: relative;
-    margin: 10px 0; /* تقليل المسافة بين البطاقات */
     width: 100%;
-    max-width: 300px; /* تحديد الحد الأقصى للعرض */
-    height: 400px;
-    background: #fff;
+    height: 350px;
+    transition: transform 0.8s ease;
     transform-style: preserve-3d;
-    transform: perspective(2000px);
-    transition: 1s;
-    box-shadow: inset 100px 0 50px rgba(233, 30, 99, 0.5);
 }
 
-.card:hover {
-    z-index: 1111;
-    transform: perspective(2000px) rotate(-10deg);
-    box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5);
+.flip-card.flipped .flip-inner {
+    transform: rotateY(180deg);
 }
 
-.card .img-container {
-    position: relative;
+.flip-front,
+.flip-back {
+    position: absolute;
     width: 100%;
     height: 100%;
-    box-sizing: border-box;
-    transform-origin: left;
-    z-index: 1;
-    transition: 1s;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
-.card .img-container img {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+.flip-front {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    text-align: center;
+    border-top: 5px solid #30b8b3;
 }
 
-.card:hover .img-container {
-    transform: rotateY(-135deg);
+.flip-front h3 {
+    color: #d63384;
+    margin-bottom: 10px;
+    font-size: 18px;
 }
 
-.card .card-details {
-    position: absolute;
-    left: 0;
-    top: 0;
-    box-sizing: border-box;
-    padding: 20px;
-    color: #000;
+.flip-front p {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 10px;
 }
 
-.card .card-details h2 {
-    margin: 0;
-    padding: 0.5em 0;
-    text-transform: uppercase;
-    font-size: 1.5em; /* تقليل حجم العنوان */
-    color: #ed363a;
-}
-
-.card .card-details p {
-    margin: 0;
-    padding: 0;
-    line-height: 25px;
-    font-size: 1.1em;
-}
-
-/* تنسيق زر "اطلب الآن" */
 .order-button {
-    display: inline-block;
-    background-color: #ed363a;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 1.1em;
-    margin-top: 10px;
-    border-radius: 5px;
+    background-color: #d63384;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .order-button:hover {
-    background-color: #c32c2a;
+    background-color: #b81d6d;
 }
 
+.flip-back {
+    background-color: #fff;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;  /* توسيط الصورة أفقياً */
+    align-items: center;      /* توسيط الصورة عمودياً */
+}
+
+.flip-back img {
+    justify-content: center;  /* توسيط الصورة أفقياً */
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    
+    object-fit: cover; /* لتغطية كامل المساحة بدون تشويه */
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.4); /* زيادة قوة الظل من الأسفل إلى الأعلى */
+}
+
+/* إضافة اسم الخدمة فوق الصورة */
+.flip-front .service-name {
+    position: absolute;
+    bottom: 15px; /* وضع النص في الأسفل */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6); /* جعل الخلفية أكثر قوة */
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 20px; /* زيادة حجم النص */
+    font-weight: bold;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* إضافة تأثير ظل حول النص */
+}
 .center-wrapper {
     justify-content: center;
     align-items: center;
@@ -145,20 +158,70 @@ body {
 @media (max-width: 768px) {
     .services-grid {
         grid-template-columns: 1fr; /* عمود واحد */
-        padding: 0 20px 40px; /* تقليل الحواف الجانبية */
+        padding: 0 15px 40px; /* تقليل الحواف الجانبية */
     }
-    .card {
-        max-width: 100%; /* جعل البطاقات تأخذ العرض الكامل على الشاشات الصغيرة */
+
+    .flip-card {
+        margin-top: 20px;
+        width: 90%; /* تقليل عرض البطاقة على التابلت ليكون أصغر */
+    }
+
+    .section-title {
+        font-size: 26px;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .flip-front h3 {
+        font-size: 16px;
+    }
+
+    .flip-front p {
+        font-size: 12px;
+    }
+
+    .order-button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    /* تقليل ارتفاع البطاقة على التابلت */
+    .flip-inner {
+        height: 250px; /* تقليل ارتفاع البطاقة على التابلت */
     }
 }
 
 @media (max-width: 480px) {
     .services-grid {
         grid-template-columns: 1fr; /* عمود واحد للجوال */
-        padding: 0 20px 30px; /* تقليل الحواف الجانبية */
+        padding: 0 15px 30px; /* تقليل الحواف الجانبية */
     }
-    .card {
-        max-width: 100%; /* جعل البطاقات تأخذ العرض الكامل على الشاشات الصغيرة */
+
+    .flip-card {
+        margin-top: 20px;
+        width: 85%; /* تقليل عرض البطاقة أكثر على الموبايل */
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    .flip-front h3 {
+        font-size: 14px;
+    }
+
+    .flip-front p {
+        font-size: 12px;
+    }
+
+    .order-button {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+
+    /* تقليل ارتفاع البطاقة على الموبايل */
+    .flip-inner {
+        height: 200px; /* تقليل ارتفاع البطاقة على الموبايل */
     }
 }
 
@@ -166,7 +229,6 @@ body {
 </head>
 
 <body>
-<!--hash-->
 <div class="hash">
     <h3>متاح التوصيل</h3>
 </div>
@@ -186,75 +248,80 @@ body {
     </header>
 
     <!-- Title -->
-<!-- عنوان القسم -->
-<h2 class="section-title" style="text-align: center;">خدماتنا</h2>
+    <h2 class="section-title">خدماتنا</h2>
+<div class="center-wrapper">
 
-<!-- الحاوية الرئيسية -->
-<div class="container">
+    <!-- Services Grid -->
+    <div class="services-grid">
 
-    <!-- بطاقة: العطور والأحذية -->
-    <div class="card">
-        <div class="img-container">
-            <img src="img/shoes.jpg" alt="عطور وأحذية" />
+        <!-- Looping Cards -->
+        <div class="flip-card">
+            <div class="flip-inner">
+                <div class="flip-front">
+                    <h3>العطور والأحذية</h3>
+                    <p>مجموعة عطور مميزة وأحذية راقية تناسب كل الأذواق.</p>
+                    <a href="#" class="order-button">اطلب الآن</a>
+                </div>
+                <div class="flip-back">
+                    <img src="img/shoes.jpg" alt="عطور وأحذية">
+                </div>
+            </div>
         </div>
-        <div class="card-details">
-            <h2>العطور والأحذية</h2>
-            <p>مجموعة عطور مميزة وأحذية راقية تناسب كل الأذواق.</p>
-            <a href="#" class="order-button">اطلب الآن</a>
+
+        <div class="flip-card">
+            <div class="flip-inner">
+                <div class="flip-front">
+                    <h3>الإكسسوارات</h3>
+                    <p>إكسسوارات أنيقة وعصرية تضيف لمسة جمال لإطلالتك.</p>
+                    <a href="#" class="order-button">اطلب الآن</a>
+                </div>
+                <div class="flip-back">
+                    <img src="img/accessories.jpg" alt="إكسسوارات">
+                </div>
+            </div>
         </div>
+
+        <div class="flip-card">
+            <div class="flip-inner">
+                <div class="flip-front">
+                    <h3>الطرح</h3>
+                    <p>أحدث تصاميم الطرح بألوان جذابة وجودة عالية.</p>
+                    <a href="#" class="order-button">اطلب الآن</a>
+                </div>
+                <div class="flip-back">
+                    <img src="img/scarves.jpg" alt="طرح">
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-inner">
+                <div class="flip-front">
+                    <h3>الملابس</h3>
+                    <p>ملابس نسائية تناسب كل المناسبات والأذواق.</p>
+                    <a href="#" class="order-button">اطلب الآن</a>
+                </div>
+                <div class="flip-back">
+                    <img src="img/clothes.jpg" alt="ملابس">
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-inner">
+                <div class="flip-front">
+                    <h3>مستحضرات التجميل</h3>
+                    <p>مستحضرات تجميل أصلية لتعزيز جمالك الطبيعي.</p>
+                    <a href="#" class="order-button">اطلب الآن</a>
+                </div>
+                <div class="flip-back">
+                    <img src="img/makeup.jpg" alt="مستحضرات التجميل">
+                </div>
+            </div>
+        </div>
+
     </div>
-
-    <!-- بطاقة: الإكسسوارات -->
-    <div class="card">
-        <div class="img-container">
-            <img src="img/accessories.jpg" alt="إكسسوارات" />
-        </div>
-        <div class="card-details">
-            <h2>الإكسسوارات</h2>
-            <p>إكسسوارات أنيقة وعصرية تضيف لمسة جمال لإطلالتك.</p>
-            <a href="#" class="order-button">اطلب الآن</a>
-        </div>
-    </div>
-
-    <!-- بطاقة: الطرح -->
-    <div class="card">
-        <div class="img-container">
-            <img src="img/scarves.jpg" alt="طرح" />
-        </div>
-        <div class="card-details">
-            <h2>الطرح</h2>
-            <p>أحدث تصاميم الطرح بألوان جذابة وجودة عالية.</p>
-            <a href="#" class="order-button">اطلب الآن</a>
-        </div>
-    </div>
-
-    <!-- بطاقة: الملابس -->
-    <div class="card">
-        <div class="img-container">
-            <img src="img/clothes.jpg" alt="ملابس" />
-        </div>
-        <div class="card-details">
-            <h2>الملابس</h2>
-            <p>ملابس نسائية تناسب كل المناسبات والأذواق.</p>
-            <a href="#" class="order-button">اطلب الآن</a>
-        </div>
-    </div>
-
-    <!-- بطاقة: مستحضرات التجميل -->
-    <div class="card">
-        <div class="img-container">
-            <img src="img/makeup.jpg" alt="مستحضرات التجميل" />
-        </div>
-        <div class="card-details">
-            <h2>مستحضرات التجميل</h2>
-            <p>مستحضرات تجميل أصلية لتعزيز جمالك الطبيعي.</p>
-            <a href="#" class="order-button">اطلب الآن</a>
-        </div>
-    </div>
-
 </div>
-
-
 <!-- Footer -->
 
 <footer class="footer">
