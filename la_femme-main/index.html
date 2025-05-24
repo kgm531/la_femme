@@ -1,229 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>La Femme Store</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome للأيقونات -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-
-
-</head>
-<body>
-<!--hash-->
-<div class="hash">
-<h3>متاح التوصيل</h3>
-</div>
-
-<!--whatsapp icon-->
-<a href="https://wa.me/01212348798" class="whatsapp-float" target="_blank">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
-<!--scroll icon-->
-<!-- Scroll Up -->
-<button class="scroll-button scroll-up" onclick="scrollToTop()">
-  <i class="fas fa-arrow-up"></i>
-</button>
-
-<button class="scroll-button scroll-down" onclick="scrollToBottom()">
-  <i class="fas fa-arrow-down"></i>
-</button>
-
-
-
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-        <!--logo-->
-        <a href="#" class="logo">
-            <img src="img\logo2.png" alt="La Femme Logo">
-          </a>
-          <div class="search-container">
-            <div class="search-box">
-              <input type="text" class="search-input" placeholder="ابحث هنا...">
-            </div>
-          </div>
-          
-        
-<div class="nav">
-  <a href="index.html">الرئيسية</a>
-  <a href="about.html">من نحن</a>
-  <a href="services.html">الخدمات</a>
-  <a href="contact.html">اتصل بنا</a>
-</div>
-
-<!-- Dropdown Menu -->
-    <div class="dropdown">
-      <button class="dropbtn">القائمة</button>
-      <div class="dropdown-content">
-        <a href="makeup.html"> مستحضرات التجميل</a>
-        <a href="#section2"> الحقائب والاحذية</a>
-        <a href="#section3"> الاكسسوارات</a>
-        <a href="#section3"> الطرح</a>
-      </div>
-    </div>
-
-    </div>
-  </header>
-
-  
-
-  <!--poster-->
-  <div class="poster">
-    <img src="img/bg_1.jpg" class="active" alt="Slide 1">
-    <img src="img/bg_2.jpg" alt="Slide 2">
-    <img src="img/bg_3.jpg" alt="Slide 3">
-  
-    <div class="text-overlay">
-      <h2>استكشفي خدماتنا</h2>
-      <div class="buttons-container">
-        <div class="row">
-          <button>العطور والأحذية</button>
-          <button>الاكسسوارات</button>
-          <button>الطرح</button>
-        </div>
-        <div class="row">
-          <button>الملابس</button>
-          <button>مستحضرات التجميل</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <h2>مرحبًا بكِ في عالم الأناقة</h2>
-      <p>اكتشفي أحدث صيحات الموضة والعناية التي تعكس جمالكِ الحقيقي.</p>
-      <a href="#" class="btn-primary">ابدئي الآن</a>
-    </div>
-  </section>
- 
-
-  <!-- Services Section -->
-  <section class="services">
-    <div class="container">
-      <h3 class="section-title">خدماتنا</h3>
-      <div class="cards">
-        <div class="card">
-          <h4>مستحضرات تجميل وعطور</h4>
-          <p>فريقنا يقدم لكِ أجمل إطلالة في المناسبات الخاص</p>
-        </div>
-        <div class="card">
-          <h4>الملابس</h4>
-          <p>متوفر لدينا احدث صيحات الملابس بأحدث الاطلالات دائما</p>
-        </div>
-        <div class="card">
-          <h4>الحقائب والأحذية</h4>
-          <p>وجود قسم خاص لكل ما هو جديد في عالم الحقائب والأحذية</p>
-        </div>
-        <div class="card">
-            <h4>الطرح</h4>
-            <p>متوفر جميع مستلزمات الحجاب والجديد في عالم الطرح</p>
-          </div>
-          <div class="card">
-            <h4>الاكسسوارات</h4>
-            <p>تمتعي بذوق مختلف وفريد مع احدث الاكسسوارات</p>
-
-          </div>
-      </div>
-    </div>
-      
-    
-
-    <div class="products-grid">
-    </div>
-  
-     <section class="products-section" data-category=" الترابيزات والكراسي">
-                <h2 class="section-title" >الترابيزات والكراسي </h2>
-                <br>
-                <hr>
-                <br>
-                <div class="products">
-                    <div class="product-card" data-category="ترابيزات وكراسي" data-aos="zoom-in" data-components="img/ترابيزات-وكراسي1.jpg, img/ترابيزات-وكراسي2.webp, img/ترابيزات-وكراسي3.webp">
-                        <img src="img/ترابيزات-وكراسي1.jpg" alt="كرسي 1" onclick="openPopup(this.src)">
-                        <h4>طقم سفرة خشبي</h4>
-                        <p>مريح وأنيق لغرفة المعيشة</p>
-                        <div class="price-section">
-                            <span class="old-price">26.000 ج.م</span> <span class="new-price">23.000 ج.م</span>
-                        </div>
-                        <span>23.000 ج.م</span>
-                        <a href="#" class="whatsapp-btn" onclick="addToCart('كرسي خشب مودرن', 950,'img/ترابيزات-وكراسي1.jpg')">أضف إلى العربة</a>
-                    </div>
-                </div>
-     </section>
-  
-  <section class="service-section">
-   
-  
-  
-
-  <!-- Footer -->
- 
-  <footer class="footer">
-    <div class="container7">
-      <div class="column">
-        <h3 id="contact-title">Contact Information</h3>
-        <p>📞 <span id="phone-text">Phone:</span> <a href="tel:01212348798">01212348798</a></p>
-        <p>📞 <span id="phone-text">Phone:</span> <a href="tel:01017102110">01017102110</a></p>
-      </div>
-      <div class="column">
-        <h3 id="important-links">Important Links</h3>
-        <a href="#" id="privacy-policy">Privacy Policy</a>
-        <br>
-        <a href="#" id="terms-of-use">Terms of Use</a>
-      </div>
-      <div class="column social">
-        <h3 id="follow-us">Follow Us</h3>
-        <a href="https://www.facebook.com/share/16AodzZejo/"> <i class="fab fa-facebook-f"></i></a>
-        
-        
-        <br>
-        <a href="https://www.instagram.com/lafemme_woman?igsh=ejhuY3IybGpxanM4"> <i class="fab fa-instagram"></i></a>
-<br>
-<a href="https://www.tiktok.com/@osama.elbannan?_t=ZS-8uchrhB8KzY&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>      
-      </div>
-    </div>
-    <div class="copyright">
-      &copy; 2025 <span id="all-rights">All Rights Reserved</span> | <span id="kgm-marketing">KGM Marketing</span>
-    </div>
-  </footer>
-
-  <script>
-    const slides = document.querySelectorAll(".poster img");
-    let current = 0;
-
-    function showNextSlide() {
-      slides[current].classList.remove("active");
-      current = (current + 1) % slides.length;
-      slides[current].classList.add("active");
-    }
-
-    setInterval(showNextSlide, 3000); // كل 3 ثوانٍ
- 
-    
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  function scrollToBottom() {
-    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-  }
-
-   document.querySelector('.menu-toggle').addEventListener('click', function() {
-      document.querySelector('.menu-container').classList.toggle('open');
-    });
-
-    
-
-
- </script>
-</body>
-</html>
