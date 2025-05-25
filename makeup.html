@@ -14,195 +14,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Cairo', sans-serif;
-            background-color: #fefefe;
-            color: #333;
-            scroll-behavior: smooth;
-        }
-
-        .header {
-  background-color: #413838; /* أو استخدم fce4ec */
-  padding: 20px 0;
-}
-
-/* =============== الحاوية العامة =============== */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-  position: relative;
-  bottom: 20px;
-}
-
-/* =============== الشعار (اللوغو) =============== */
-/*logo*/
-.logo {
-  font-size: 28px;
-  margin: 0;
-}
-
-.logo img {
-  height: 100px;
-  width: 300px;
-  position: relative;
-  top: 73px;
-  animation: logoEntrance 1s ease forwards;
-  transition: transform .3s ease, box-shadow 0.3s ease;
-}
-
-.logo img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(236, 94, 142, 0.3);
-  animation: wiggle .5s ease-in-out;
-}
-
-@keyframes logoEntrance {
-  0% {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes wiggle {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  25% {
-    transform: rotate(3deg);
-  }
-
-  50% {
-    transform: rotate(-3deg);
-  }
-
-  75% {
-    transform: rotate(2deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
-}
-        
-
-        /* =============== Dropdown Menu Styling =============== */
-  .dropdown {
-    position: absolute;
-    left: -100px;
-    top: 70px;
-    z-index: 1;
-
-  }
-
-  .dropbtn {
-    background-color: #d63384;
-    color: white;
-    padding: 10px 20px;
-    font-size: 18px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    font-family: 'Cairo', sans-serif;
-    transition: background-color 0.3s ease;
-  }
-
-  .dropbtn:hover {
-    background-color: #e91e63;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    border-radius: 12px;
-    z-index: 1;
-    direction: rtl;
-  }
-
-  .dropdown-content a {
-    color: #d63384;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-family: 'Cairo', sans-serif;
-    border-bottom: 1px solid #fce4ec;
-  }
-
-  .dropdown-content a:hover {
-    background-color: #f8bbd0;
-    color: #fff;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-  .dropdown-content a:last-child {
-    border-bottom: none;
-  }
-
-  .nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 20px;
-  font-size: 18px;
-  border-radius: 12px;
-  margin: 40px auto 20px;
-  direction: rtl;
-  max-width: 95%;
-  transition: all 0.3s ease-in-out;
-  position: relative;
-  right:  50px;
   
-}
-
 
         /*الصور المصغرة*/
 
 .header-container {
   text-align: center;
-  /* لتوسيط العنوان أفقياً */
   padding: 20px;
-  /* لإضافة مساحة حول العنوان */
   margin-bottom: 30px;
-  /* لإضافة مساحة أسفل العنوان لفصله عن الصور */
-  /* يمكنك إضافة المزيد من التنسيقات هنا مثل لون الخلفية، لون الخط، حجم الخط، إلخ. */
 }
 
 .header-container h1 {
   color: #333;
-  /* مثال على لون الخط */
   font-size: 2em;
-  /* مثال على حجم الخط */
   margin: 0;
-  /* لإزالة الهوامش الافتراضية للعنوان */
 }
 
+/*========= THUMBNAILS =========*/
 .thumbnails-container {
   display: flex;
   flex-wrap: wrap;
-  /* للسماح للصور بالانتقال إلى سطر جديد إذا لم يكن هناك مساحة كافية */
   justify-content: center;
-  /* لتوسيط الصور أفقياً */
   gap: 20px;
-  /* المسافة بين الصور المصغرة */
   padding: 20px;
 }
 
@@ -211,21 +44,15 @@
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  /* إزالة التسطير من الروابط */
   color: #333;
 }
 
 .thumbnail {
   width: 80px;
-  /* حجم الدائرة */
   height: 80px;
-  /* حجم الدائرة */
   border-radius: 50%;
-  /* لجعل الشكل دائري */
   overflow: hidden;
-  /* لإخفاء أي جزء من الصورة يتجاوز الدائرة */
   border: 2px solid #ddd;
-  /* حدود دائرية */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
@@ -237,25 +64,106 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* لملء الدائرة بالصورة مع الحفاظ على نسبة العرض إلى الارتفاع */
 }
 
 .thumbnail i {
-  /* تنسيق أيقونة "الكل" */
   font-size: 30px;
   color: #555;
 }
 
 .thumbnail-link span {
   font-size: 0.9em;
+  text-align: center;
 }
 
 .thumbnail-link:hover .thumbnail {
   border-color: gold;
-  /* تغيير لون الحدود عند التhover */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/*========= FULL LINE =========*/
+.full-line {
+  width: 90%;
+  margin: 30px auto;
+  border: none;
+  border-top: 2px solid #ccc;
+}
+/*========= SECTION TITLES =========*/
+.section-title,
+.section-title3 {
+  text-align: center;
+  margin: 40px 0 20px;
+  animation: fadeInUp 1s ease;
+}
+
+.section-title h2,
+.section-title3 h2 {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 26px;
+  color: #0e6977;
+  font-family: 'Cairo', sans-serif;
+  border: 2px solid #f06292;
+  border-radius: 12px;
+  background-color: #fefefe;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+  right: 0; /* إزالة الإزاحة */
+}
+
+.section-title h2:hover,
+.section-title3 h2:hover {
+  color: #f06292;
+}
+
+/*========= ANIMATION =========*/
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/*========= PRODUCTS =========*/
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product-card h3 {
+  margin: 15px 0 10px;
+  font-size: 18px;
+  color: #000;
+}
+
+.product-card p {
+  color: #8e0a0a;
+  font-size: 20px;
+}
+
+/*========= RESPONSIVE DESIGN =========*/
 @media (max-width: 768px) {
   .header-container {
     padding: 15px;
@@ -279,9 +187,24 @@
   .thumbnail-link span {
     font-size: 0.85em;
   }
+
+  .section-title h2,
+  .section-title3 h2 {
+    font-size: 22px;
+    padding: 8px 16px;
+  }
+
+  .product-card img {
+    height: 220px;
+  }
 }
 
 @media (max-width: 480px) {
+   .products-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    max-width: 1000px;
+    
+  }
   .header-container h1 {
     font-size: 1.4em;
   }
@@ -302,120 +225,29 @@
 
   .thumbnail-link span {
     font-size: 0.8em;
-    text-align: center;
   }
-}
 
-.full-line {
-  width: 90%;
-  margin: 30px auto;
-  border: none;
-  border-top: 2px solid #ccc;
-}
-
-
-.section-title {
-  text-align: center;
-  margin: 40px 0 20px 0;
-  animation: fadeInUp 1s ease;
-}
-
-.section-title h2 {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 26px;
-  color: #0e6977; /* لون متناسق مع لون الشعار */
-  font-family: 'Cairo', sans-serif; /* خط عربي جميل */
-  border: 2px solid #f06292; /* لون ناعم للبوردر */
-  border-radius: 12px;
-  background-color: #fefefe;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  position: relative;
-  right: 630px;
-}
-.section-title h2:hover{
-  color:#f06292 ;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+  .section-title h2,
+  .section-title3 h2 {
+    font-size: 20px;
+    padding: 6px 12px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .product-card {
+    padding: 10px;
   }
-}
-/*الجملة الخاصة بالشفاه*/
-.section-title3{
-text-align: center;
-  margin: 40px 0 20px 0;
-  animation: fadeInUp 1s ease;
-}
 
-.section-title3 h2 {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 26px;
-  color: #0e6977; /* لون متناسق مع لون الشعار */
-  font-family: 'Cairo', sans-serif; /* خط عربي جميل */
-  border: 2px solid #f06292; /* لون ناعم للبوردر */
-  border-radius: 12px;
-  background-color: #fefefe;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  position: relative;
-  right: 30px;
-}
-.section-title3 h2:hover{
-  color:#f06292 ;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+  .product-card img {
+    height: 180px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .product-card h3 {
+    font-size: 16px;
   }
-}
 
-
-
-.products-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.product-card {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 15px;
-  text-align: center;
-  width: 280px;
-
-}
-
-.product-card img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.product-card h3 {
-  margin: 15px 0 10px;
-  font-size: 18px;
-  color: #000;
-}
-
-.product-card p {
-  color: #8e0a0a;
-  font-size: 20px;
+  .product-card p {
+    font-size: 18px;
+  }
 }
 
 .footer {
@@ -569,7 +401,7 @@ text-align: center;
   <br>
   <hr class="full-line">
 
- <div class="section-title">
+ <div class="section-title3">
   <h2>منتجات العناية بالبشرة</h2>
 </div>
 
@@ -648,7 +480,7 @@ text-align: center;
   <hr class="full-line">
   
 
-  <div class="section-title" id="face">
+  <div class="section-title3" id="face">
   <h2>مستحضرات تجميل  </h2>
 </div>
   <div class="products-container" >
