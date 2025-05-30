@@ -543,35 +543,35 @@
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div> 
-     <div class="product-card" data-name="بونيه كروس" data-price="400" data-img="img/HEJAB/b6.jpg">
+     <div class="product-card" data-name="بونيه كروس" data-price="85.00" data-img="img/HEJAB/b6.jpg">
       <img src="img/HEJAB/b6.jpg" alt="منتج 6">
       <h3>بونيه كروس </h3>
       <p></p>
       <p class="price" data-original-price="85.00">EG 85.00</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div> 
-     <div class="product-card" data-name="بونيه بدون خياطة قطن" data-price="400" data-img="img/HEJAB/b7.jpg">
+     <div class="product-card" data-name="بونيه بدون خياطة قطن" data-price="75.00" data-img="img/HEJAB/b7.jpg">
       <img src="img/HEJAB/b7.jpg" alt="منتج 7">
       <h3>بونيه بدون خياطة قطن </h3>
       <p></p>
       <p class="price" data-original-price="75.00">EG 75.00</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div> 
-     <div class="product-card" data-name="بونيه كشكشه" data-price="85.00" data-img="img/HEJAB/b8.jpg">
+     <div class="product-card" data-name="بونيه كشكشه" data-price="85.00" data-img="img/HEJAB/b8.webp">
       <img src="img/HEJAB/b8.webp" alt="8منتج ">
       <h3>بونيه كشكشه</h3>
       <p></p>
       <p class="price" data-original-price="85.00">EG 85.00</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div> 
-    <div class="product-card" data-name="بونيه تركي" data-price="95.00" data-img="img/HEJAB/b9.jpg">
+    <div class="product-card" data-name="بونيه تركي" data-price="95.00" data-img="img/HEJAB/b9.webp">
       <img src="img/HEJAB/b9.webp" alt="منتج 9">
       <h3>بونيه تركي</h3>
       <p></p>
       <p class="price" data-original-price="95.00">EG 95.00</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div> 
-     <div class="product-card" data-name="بونيه كويتي" data-price="85.00" data-img="img/HEJAB/b10.jpg">
+     <div class="product-card" data-name="بونيه كويتي" data-price="85.00" data-img="img/HEJAB/b10.webp">
       <img src="img/HEJAB/b10.webp" alt="منتج 10">
       <h3>بونيه كويتي</h3>
       <p></p>
@@ -892,11 +892,7 @@
 
 
   </div>
-  
 
-
-  
-  
   
 <!-- Footer -->
  
@@ -928,6 +924,39 @@
       &copy; 2025 <span id="all-rights">All Rights Reserved</span> | <span id="kgm-marketing">KGM Marketing</span>
     </div>
   </footer>
+
+  <!-- نافذة المودال -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <span class="close-modal" id="closeModal">&times;</span>
+      <img id="modalImage" src="" alt="صورة المنتج">
+      <h3 id="modalTitle"></h3>
+      <p class="price" id="modalPrice"></p>
+      <button class="buy-now" id="buyNowBtn">شراء المنتج الآن</button>
+    </div>
+  </div>
+
+
+  <!-- صفحة تأكيد الطلب -->
+  <div id="confirmationPage" class="confirmation-modal" style="display:none;">
+    <div class="confirmation-content">
+      <h3>تأكيد الطلب</h3>
+      <label>📍 العنوان *</label>
+      <input type="text" id="userAddress" placeholder="اكتب العنوان" required>
+  
+      <label>📞 رقم الموبايل *</label>
+      <input type="tel" id="userPhone" placeholder="اكتب رقم الهاتف" required>
+  
+      <label>📝 ملاحظات (اختياري)</label>
+      <textarea id="userNotes" placeholder="اكتب أي ملاحظات..."></textarea>
+  
+      <div style="margin-top: 15px; text-align: center;">
+        <button onclick="sendOrder()">تأكيد الطلب</button>
+        <button onclick="closeConfirmation()">إلغاء</button>
+      </div>
+    </div>
+  </div>
+
 
   <script>
 
@@ -1022,25 +1051,27 @@
   }
 
   document.getElementById('checkout').addEventListener('click', () => {
-    if (cart.length === 0) {
-      alert('السلة فارغة!');
-      return;
-    }
+      if (cart.length === 0) {
+        alert('السلة فارغة!');
+        return;
+      }
 
-    let message = '*طلب جديد من المتجر:*\n\n';
-    cart.forEach(item => {
-      message += `🛍️ *${item.name}*\nالكمية: ${item.quantity}\nالسعر: ${item.price.toFixed(2)} EG\nالصورة: ${window.location.origin}/${item.img}\n\n`;
+      let message = '*🛒 طلب جديد من المتجر:*\n\n';
+      const githubBaseUrl = 'https://raw.githubusercontent.com/kgm531/la_femme/refs/heads/main/';
+
+      cart.forEach(item => {
+        const fullImgUrl = githubBaseUrl + item.img;
+        message += `🛍️ *${item.name}*\nالكمية: ${item.quantity}\nالسعر: ${item.price.toFixed(2)} EG\n🖼️ الصورة: ${fullImgUrl}\n\n`;
+      });
+
+      const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      message += `\n*💵 السعر الإجمالي: ${totalPrice.toFixed(2)} EG*`;
+    document.getElementById('cart-popup').classList.remove('open');
+
+      openConfirmation(message); 
     });
 
-    // حساب السعر الإجمالي عند الإرسال أيضاً
-    const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    message += `\n*السعر الإجمالي: ${totalPrice.toFixed(2)} EG*`;
-
-    const phoneNumber = "+201276357603"; // رقم المتجر بدون +
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-  });
-
+      
   function updateCartCount() {
     const count = cart.reduce((total, item) => total + item.quantity, 0);
     const cartCount = document.getElementById('cart-count');
@@ -1069,6 +1100,101 @@
   function openCart() {
     cartPopup.classList.add('open');
   }
+
+    const modal = document.getElementById('productModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalPrice = document.getElementById('modalPrice');
+    const closeModal = document.getElementById('closeModal');
+
+    document.querySelectorAll('.product-card').forEach(card => {
+      card.addEventListener('click', function (e) {
+        // منع التفاعل مع زر "إضافة إلى السلة"
+        if (e.target.tagName.toLowerCase() === 'button') return;
+
+        const img = this.dataset.img;
+        const name = this.dataset.name;
+        const price = this.dataset.price;
+
+        modalImg.src = img;
+        modalTitle.textContent = name;
+        modalPrice.textContent = `EG ${price}`;
+
+        modal.style.display = 'flex';
+      });
+    });
+
+    closeModal.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    // إغلاق النافذة عند الضغط خارج المحتوى
+    window.addEventListener('click', function (e) {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+
+    /*------------------------------------*/
+    const buyNowBtn = document.getElementById('buyNowBtn');
+
+      document.querySelectorAll('.product-card').forEach(card => {
+        card.addEventListener('click', function (e) {
+          if (e.target.tagName.toLowerCase() === 'button') return;
+
+          const imgPath = this.dataset.img; // مثلاً: img/HEJAB/b1.jpg
+          const name = this.dataset.name;
+          const price = this.dataset.price;
+
+          // رابط GitHub Pages لمعرض الصور
+          const baseUrl = 'https://raw.githubusercontent.com/kgm531/la_femme/refs/heads/main/';
+          const fullImgUrl = baseUrl + imgPath;
+
+          modalImg.src = fullImgUrl;
+          modalTitle.textContent = name;
+          modalPrice.textContent = `EG ${price}`;
+
+          buyNowBtn.onclick = () => {
+            const message = `أرغب بشراء المنتج التالي:\n\n🛍 الاسم: ${name}\n💰 السعر: ${price} جنيه\n🖼 صورة المنتج:\n${fullImgUrl}`;
+            modal.style.display = 'none'; // ✅ إغلاق نافذة المنتج
+            openConfirmation(message); // فتح نموذج التأكيد قبل الإرسال
+          };
+
+          modal.style.display = 'flex';
+        });
+      });
+
+      let currentOrderMessage = ''; // تُستخدم لتخزين محتوى الطلب (سواء من السلة أو منتج واحد)
+
+        function openConfirmation(message) {
+          currentOrderMessage = message;
+          document.getElementById('confirmationPage').style.display = 'flex';
+        }
+
+        function closeConfirmation() {
+          document.getElementById('confirmationPage').style.display = 'none';
+        }
+
+        function sendOrder() {
+          const address = document.getElementById('userAddress').value.trim();
+          const phone = document.getElementById('userPhone').value.trim();
+          const notes = document.getElementById('userNotes').value.trim();
+
+          if (!address || !phone) {
+            alert("يرجى إدخال العنوان ورقم الموبايل.");
+            return;
+          }
+
+          let finalMessage = `${currentOrderMessage}\n\n📍 العنوان: ${address}\n📞 رقم الهاتف: ${phone}`;
+          if (notes) {
+            finalMessage += `\n📝 ملاحظات: ${notes}`;
+          }
+
+          const whatsappUrl = `https://wa.me/201276357603?text=${encodeURIComponent(finalMessage)}`;
+          window.open(whatsappUrl, '_blank');
+          closeConfirmation();
+        }
+
 
   </script>
 
