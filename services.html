@@ -14,18 +14,58 @@
 </head>
 
 <style>
+
+.animated-border-title h2 {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff; /* لون النص */
+  border: 3px solid #30b8b3; /* البنفسجي الوردي */
+  border-radius: 15px;
+    background-color: #30b8b3;
+  
+  box-shadow: 0 4px 15px rgba(214, 51, 132, 0.4);
+  animation: fadeInScale 1s ease forwards;
+  opacity: 0;
+}
+
+/* الأنيميشن */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.section-title {
+  display: flex;
+  justify-content: center; /* توسيط أفقي */
+  align-items: center;     /* توسيط عمودي (اختياري لو عندك ارتفاع ثابت) */
+  margin: 40px 0;
+  height: 100px; /* تقدر تعدل حسب احتياجك */
+}
+
+
+
 .service-card-magic {
   background: linear-gradient(135deg, #f06292 0%, #d63384 100%);
   color: white;
   padding: 25px 20px;
   border-radius: 20px 5px 20px 5px;
   box-shadow: 0 10px 25px rgba(214, 51, 132, 0.5);
-  width: 280px;
+  width: 380px;
   text-align: center;
   transition: box-shadow 0.3s ease;
   cursor: pointer;
   font-family: 'Cairo', sans-serif;
+  
 }
+
 
 .service-card-magic:hover {
   box-shadow: 0 15px 35px rgba(236, 94, 142, 0.8);
@@ -54,19 +94,31 @@
 
 /* شبكة العرض */
 .services-magic-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 أعمدة دائمًا */
   gap: 30px;
   padding: 20px 10px;
+  justify-items: center; /* علشان تبقى البطاقات في النص */
 }
+@media (max-width: 768px) {
+  .services-magic-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .services-magic-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 
 </style>
 <body>
 <!--hash-->
 <div class="hash">
-    <h3>متاح التوصيل</h3>
+    <h3> متاح التوصيل والشحن لجميع المحافظات </h3>
 </div>
 
 <!--whatsapp icon-->
@@ -110,20 +162,22 @@
                 <a href="makeup.html">مستحضرات التجميل</a>
                 <a href="#section2">الحقائب والاحذية</a>
                 <a href="#section3">الاكسسوارات</a>
-                <a href="#section3">الطرح</a>
+                <a href="hijab.html">مستلزمات الحجاب</a>
             </div>
         </div>
+    
 
     </div>
 </header>
 
 <section class="services-section">
-    <div class="section-title">
+    <div class="section-title animated-border-title">
         <h2>خدماتنا</h2>
     </div>
     <div class="services-magic-grid">
         <div class="service-card-magic">
-            <img src="img/makeup.jpg" alt="مستحضرات التجميل" />
+        
+            <a href="makeup.html"><img src="img/makeup.jpg" alt="مستحضرات التجميل" /></a>
             <h3>مستحضرات التجميل</h3>
             <p>أحدث منتجات العناية والتجميل لتبدو أجمل وأشعر بثقة.</p>
         </div>
@@ -146,9 +200,9 @@
             <p>أجمل الإكسسوارات التي تضفي لمسة خاصة على إطلالتك.</p>
         </div>
 
-        <div class="service-card-magic">
-            <img src="img/scarves.jpg" alt="الطرح" />
-            <h3>الطرح</h3>
+         <div  class="service-card-magic">
+           <a href="hijab.html"> <img src="img/scarves.jpg" alt="مستلزمات الحجاب" /></a>
+            <h3>مستلزمات الحجاب</h3>
             <p>مجموعة من الطرح المختلفة التي تناسب جميع الأذواق والمناسبات.</p>
         </div>
 
@@ -158,6 +212,8 @@
             <p>ملابس بأحدث التصاميم لتكون أنيقًا ومميزًا دائماً.</p>
         </div>
     </div>
+    
+    
 </section>
 
 

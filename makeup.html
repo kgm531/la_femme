@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>من نحن | La Femme</title>
+    <title>makeup</title>
         <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap" rel="stylesheet">
@@ -14,6 +14,97 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
+
+      /*whatsapp icon*/
+  .whatsapp-float {
+    position: fixed;
+    bottom: 160px;
+    right: 20px; /* بدل left: 20px */
+    width: 55px;
+    height: 55px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    transition: transform 0.3s ease;
+  }
+  
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+  }
+  
+  
+
+  /*scroll icon*/
+  .scroll-button {
+    position: fixed;
+    /* Keep buttons fixed on the screen */
+    width: 50px;
+    height: 50px;
+    background-color: #ec5e8e;
+    /* Vibrant red color */
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    /* Make buttons circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Add shadow for depth */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 100;
+    /* Ensure buttons stay above content */
+  }
+
+  /* Hover Effect */
+  .scroll-button:hover {
+    background-color: #30b8b3;
+    /* Darker red on hover */
+    transform: scale(1.1);
+    /* Slight zoom effect */
+  }
+
+  /* Scroll Up Button */
+  .scroll-up {
+    bottom: 80px;
+    /* Position button 80px from the bottom */
+    right: 20px;
+    /* Position button 20px from the right */
+  }
+
+  /* Scroll Down Button */
+  .scroll-down {
+    bottom: 20px;
+    /* Position button 20px from the bottom */
+    right: 20px;
+    /* Position button 20px from the right */
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .scroll-button {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+    }
+  }
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
   
 
         /*الصور المصغرة*/
@@ -346,8 +437,23 @@
 <body>
 <!--hash-->
 <div class="hash">
-    <h3>متاح التوصيل</h3>
+    <h3>متاح التوصيل والشحن لجميع المحافظات  </h3>
 </div>
+
+<!--whatsapp icon-->
+<a href="https://wa.me/01212348798" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!--scroll icon-->
+<!-- Scroll Up -->
+<button class="scroll-button scroll-up" onclick="scrollToTop()">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<button class="scroll-button scroll-down" onclick="scrollToBottom()">
+  <i class="fas fa-arrow-down"></i>
+</button>
 
 <!-- أيقونة السلة العائمة -->
 <div class="cart-icon" id="cart-icon">
@@ -384,10 +490,10 @@
 <div class="dropdown">
   <button class="dropbtn">&#9776; القائمة</button> <!-- أيقونة ☰ -->
   <div class="dropdown-content">
-    <a href="#makeup.html"> مستحضرات التجميل</a>
+    <a href="makeup.html"> مستحضرات التجميل</a>
         <a href="#section2"> الحقائب والاحذية</a>
         <a href="#section3"> الاكسسوارات</a>
-        <a href="#section3"> الطرح</a>
+        <a href="hijab.html"> مستلزمات الحجاب</a>
   </div>
 </div>
 
@@ -403,31 +509,31 @@
   <div class="thumbnails-container">
      <a href="#skin" class="thumbnail-link">
         <div class="thumbnail">
-            <img src="img/LAFEMME_FOR_MEKEUP/بشرة.png" alt="صورة 1">
+            <img src="img/MEKEUP/بشرة.png" alt="صورة 1">
         </div>
         <span>  العناية بالبشرة</span>
     </a>
     <a href="#face" class="thumbnail-link">
         <div class="thumbnail">
-            <img src="img/LAFEMME_FOR_MEKEUP/face.jpg" alt="صورة 1">
+            <img src="img/MEKEUP/face.jpg" alt="صورة 1">
         </div>
         <span>  الوجه</span>
     </a>
     <a href="#Eyes" class="thumbnail-link">
         <div class="thumbnail">
-            <img src="img/LAFEMME_FOR_MEKEUP/Eyes.webp" alt="صورة 2">
+            <img src="img/MEKEUP/Eyes.webp" alt="صورة 2">
         </div>
         <span> العيون</span>
     </a>
     <a href="#libs" class="thumbnail-link">
         <div class="thumbnail">
-            <img src="img/LAFEMME_FOR_MEKEUP/Lips.webp" alt="صورة 3">
+            <img src="img/MEKEUP/Lips.webp" alt="صورة 3">
         </div>
         <span> الشفاه</span>
     </a>
     <a href="#tools" class="thumbnail-link">
         <div class="thumbnail">
-            <img src="img/LAFEMME_FOR_MEKEUP/Brushes.webp" alt="صورة 4">
+            <img src="img/MEKEUP/Brushes.webp" alt="صورة 4">
         </div>
         <span>ادوات المكياج</span>
     </a>
@@ -441,16 +547,16 @@
 
   <div class="products-container" id="skin">
 
-    <div class="product-card" data-name="كريم مرطب" data-price="400" data-img="img/LAFEMME_FOR_MEKEUP/face8.webp">
-      <img src="img/LAFEMME_FOR_MEKEUP/face8.webp" alt="منتج 1">
+    <div class="product-card" data-name="كريم مرطب" data-price="400" data-img="img/MEKEUP/face8.webp">
+      <img src="img/MEKEUP/face8.webp" alt="منتج 1">
       <h3>كريم مرطب</h3>
       <p></p>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
-    <div class="product-card" data-name="كريم تجديد البشرة" data-price="400" data-img="img/LAFEMME_FOR_MEKEUP/face1.jpg">
-      <img src="img/LAFEMME_FOR_MEKEUP/face1.jpg" alt="منتج 2">
+    <div class="product-card" data-name="كريم تجديد البشرة" data-price="400" data-img="img/MEKEUP/face1.jpg">
+      <img src="img/MEKEUP/face1.jpg" alt="منتج 2">
       <h3>كريم تجديد البشرة</h3>
       <p></p>
       <p class="price" data-original-price="400">EG 400</p>
@@ -458,64 +564,64 @@
     </div>
     
     <div class="product-card" data-name="جيل تفتيح وازالة القشور" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/face2.jpg">
-      <img src="img/LAFEMME_FOR_MEKEUP/face2.jpg" alt="منتج 3">
+      data-img="img/MEKEUP/face2.jpg">
+      <img src="img/MEKEUP/face2.jpg" alt="منتج 3">
       <h3>جيل تفتيح وازالة القشور</h3>
       <p></p>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
-    <div class="product-card" data-name="smoothing gel" data-price="400" data-img="img/LAFEMME_FOR_MEKEUP/face3.jpg">
-      <img src="img/LAFEMME_FOR_MEKEUP/face3.jpg" alt="منتج 4">
+    <div class="product-card" data-name="smoothing gel" data-price="400" data-img="img/MEKEUP/face3.jpg">
+      <img src="img/MEKEUP/face3.jpg" alt="منتج 4">
       <h3>smoothing gel</h3>
       <p></p>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
-    <div class="product-card" data-name="skin care" data-price="400" data-img="img/LAFEMME_FOR_MEKEUP/face5.jpg">
-      <img src="img/LAFEMME_FOR_MEKEUP/face5.jpg" alt="منتج 5">
+    <div class="product-card" data-name="skin care" data-price="400" data-img="img/MEKEUP/face5.jpg">
+      <img src="img/MEKEUP/face5.jpg" alt="منتج 5">
       <h3>skin care</h3>
        <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
     <div class="product-card" data-name="قناع الكولاجين من مايت سينما" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/face6.jpg">
-      <img src="img/LAFEMME_FOR_MEKEUP/face6.jpg" alt="منتج 6">
+      data-img="img/MEKEUP/face6.jpg">
+      <img src="img/MEKEUP/face6.jpg" alt="منتج 6">
       <h3>قناع الكولاجين من مايت سينما</h3>
        <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
     <div class="product-card" data-name="كريم ترطيب مايت سينما" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/face7.jpg">
-      <img src="img/LAFEMME_FOR_MEKEUP/face7.jpg" alt="منتج 7">
+      data-img="img/MEKEUP/face7.jpg">
+      <img src="img/MEKEUP/face7.jpg" alt="منتج 7">
       <h3>كريم ترطيب مايت سينما</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
     <div class="product-card" data-name="مقشر الوجه بالأفوكادو والعسل" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/face9.jpg">
-      <img src="img/LAFEMME_FOR_MEKEUP/face9.jpg" alt="منتج 8">
+      data-img="img/MEKEUP/face9.jpg">
+      <img src="img/MEKEUP/face9.jpg" alt="منتج 8">
       <h3>مقشر الوجه الناعم بالأفوكادو والعسل من سانت آيفز</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
     <div class="product-card" data-name="رذاذ مرطب للبشرة 4 في 1" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/face10.webp">
-      <img src="img/LAFEMME_FOR_MEKEUP/face10.webp" alt="منتج 9">
+      data-img="img/MEKEUP/face10.webp">
+      <img src="img/MEKEUP/face10.webp" alt="منتج 9">
       <h3>رذاذ مرطب للبشرة 4 في 1 برائحة الذهب الوردي 50 مل</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
     <div class="product-card" data-name="سيروم تعزيز البشرة ألترا إتش دي" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/face11.webp">
-      <img src="img/LAFEMME_FOR_MEKEUP/face11.webp" alt="منتج 10">
+      data-img="img/MEKEUP/face11.webp">
+      <img src="img/MEKEUP/face11.webp" alt="منتج 10">
       <h3>سيروم تعزيز البشرة ألترا إتش دي</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
@@ -531,77 +637,77 @@
 </div>
   <div class="products-container" >
     <div class="product-card" data-name="مجموعة العناية بالبشرة من مايت سينما" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/f1.jpg">
-      <img src="img/LAFEMME_FOR_MEKEUP/f1.jpg" alt="منتج 1">
+      data-img="img/MEKEUP/f1.jpg">
+      <img src="img/MEKEUP/f1.jpg" alt="منتج 1">
       <h3>مجموعة العناية بالبشرة من مايت سينما</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
-    <div class="product-card" data-name="air cushion blush" data-price="400" data-img="img/LAFEMME_FOR_MEKEUP/f2.jpg">
-      <img src="img/LAFEMME_FOR_MEKEUP/f2.jpg" alt="منتج 2">
+    <div class="product-card" data-name="air cushion blush" data-price="400" data-img="img/MEKEUP/f2.jpg">
+      <img src="img/MEKEUP/f2.jpg" alt="منتج 2">
       <h3>air cushion blush</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
-    <div class="product-card" data-name="HGH-GLOW BLUSH" data-price="400" data-img="img/LAFEMME_FOR_MEKEUP/f3.jpg">
-      <img src="img/LAFEMME_FOR_MEKEUP/f3.jpg" alt="منتج 3">
+    <div class="product-card" data-name="HGH-GLOW BLUSH" data-price="400" data-img="img/MEKEUP/f3.jpg">
+      <img src="img/MEKEUP/f3.jpg" alt="منتج 3">
       <h3>HGH-GLOW BLUSH</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
     <div class="product-card" data-name="Sheglam Matte foundation" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/f4.webp">
-      <img src="img/LAFEMME_FOR_MEKEUP/f4.webp" alt="منتج 4">
+      data-img="img/MEKEUP/f4.webp">
+      <img src="img/MEKEUP/f4.webp" alt="منتج 4">
       <h3>Sheglam Matte foundation</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
     <div class="product-card" data-name="Bourjois Healthy Mix Clean &Vegan Concealer" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/f5.webp">
-      <img src="img/LAFEMME_FOR_MEKEUP/f5.webp" alt="منتج 5">
+      data-img="img/MEKEUP/f5.webp">
+      <img src="img/MEKEUP/f5.webp" alt="منتج 5">
       <h3>Bourjois Healthy Mix Clean &Vegan Concealer</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
-    <div class="product-card" data-name="sheglam contour" data-price="400" data-img="img/LAFEMME_FOR_MEKEUP/f6.webp">
-      <img src="img/LAFEMME_FOR_MEKEUP/f6.webp" alt="منتج 6">
+    <div class="product-card" data-name="sheglam contour" data-price="400" data-img="img/MEKEUP/f6.webp">
+      <img src="img/MEKEUP/f6.webp" alt="منتج 6">
       <h3>sheglam contour</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
     <div class="product-card" data-name="مايت سينما باليت كونتور وأحمر خدود كريمي 12 لون - موديل : 1338" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/f7.webp">
-      <img src="img/LAFEMME_FOR_MEKEUP/f7.webp" alt="منتج 7">
+      data-img="img/MEKEUP/f7.webp">
+      <img src="img/MEKEUP/f7.webp" alt="منتج 7">
       <h3>مايت سينما باليت كونتور وأحمر خدود كريمي 12 لون - موديل : 1338</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
     <div class="product-card" data-name="أحمر الخدود فيت مي من مايبيلين نيويورك - 55 بيري" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/f8.webp">
-      <img src="img/LAFEMME_FOR_MEKEUP/f8.webp" alt="منتج 8">
+      data-img="img/MEKEUP/f8.webp">
+      <img src="img/MEKEUP/f8.webp" alt="منتج 8">
       <h3>أحمر الخدود فيت مي من مايبيلين نيويورك - 55 بيري</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
     <div class="product-card" data-name="أحمر خدود كريمي من جولدن روز - رقم 110" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/f9.webp">
-      <img src="img/LAFEMME_FOR_MEKEUP/f9.webp" alt="منتج 9">
+      data-img="img/MEKEUP/f9.webp">
+      <img src="img/MEKEUP/f9.webp" alt="منتج 9">
       <h3>أحمر خدود كريمي من جولدن روز - رقم 110</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
     <div class="product-card" data-name="بودرة هيلثي ميكس من بورجوا" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/f10.webp">
-      <img src="img/LAFEMME_FOR_MEKEUP/f10.webp" alt="منتج 10">
+      data-img="img/MEKEUP/f10.webp">
+      <img src="img/MEKEUP/f10.webp" alt="منتج 10">
       <h3>بودرة هيلثي ميكس من بورجوا</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
@@ -614,75 +720,75 @@
   <h2> الشفاه  </h2>
 </div>
   <div class="products-container" >
-    <div class="product-card" data-name="lip gloss code: 4115" data-price="400" data-img="img/LAFEMME_FOR_MEKEUP/l2.jpg">
-      <img src="img/LAFEMME_FOR_MEKEUP/l2.jpg" alt="منتج 1">
+    <div class="product-card" data-name="lip gloss code: 4115" data-price="400" data-img="img/MEKEUP/l2.jpg">
+      <img src="img/MEKEUP/l2.jpg" alt="منتج 1">
       <h3>lip gloss code: 4115</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
-    <div class="product-card" data-name="ماط ليب جلوس كود: 4000" data-price="400" data-img="img/LAFEMME_FOR_MEKEUP/l3.jpg">
-      <img src="img/LAFEMME_FOR_MEKEUP/l3.jpg" alt="منتج 2">
+    <div class="product-card" data-name="ماط ليب جلوس كود: 4000" data-price="400" data-img="img/MEKEUP/l3.jpg">
+      <img src="img/MEKEUP/l3.jpg" alt="منتج 2">
       <h3>ماط ليب جلوس كود: 4000</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
     <div class="product-card" data-name="Lifter Libgloss code: 1316" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/l4.jpg">
-      <img src="img/LAFEMME_FOR_MEKEUP/l4.jpg" alt="منتج 3">
+      data-img="img/MEKEUP/l4.jpg">
+      <img src="img/MEKEUP/l4.jpg" alt="منتج 3">
       <h3>Lifter Libgloss code: 1316</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
-    <div class="product-card" data-name="lip oil code: 1331" data-price="400" data-img="img/LAFEMME_FOR_MEKEUP/l5.jpg">
-      <img src="img/LAFEMME_FOR_MEKEUP/l5.jpg" alt="منتج 4">
+    <div class="product-card" data-name="lip oil code: 1331" data-price="400" data-img="img/MEKEUP/l5.jpg">
+      <img src="img/MEKEUP/l5.jpg" alt="منتج 4">
       <h3>lip oil code: 1331</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
-    <div class="product-card" data-name="ميني روج كود: 4110" data-price="400" data-img="img/LAFEMME_FOR_MEKEUP/l6.jpg">
-      <img src="img/LAFEMME_FOR_MEKEUP/l6.jpg" alt="منتج 5">
+    <div class="product-card" data-name="ميني روج كود: 4110" data-price="400" data-img="img/MEKEUP/l6.jpg">
+      <img src="img/MEKEUP/l6.jpg" alt="منتج 5">
       <h3>ميني روج كود: 4110</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
-    <div class="product-card" data-name="lip stick code: 4102" data-price="400" data-img="img/LAFEMME_FOR_MEKEUP/l7.jpg">
-      <img src="img/LAFEMME_FOR_MEKEUP/l7.jpg" alt="منتج 6">
+    <div class="product-card" data-name="lip stick code: 4102" data-price="400" data-img="img/MEKEUP/l7.jpg">
+      <img src="img/MEKEUP/l7.jpg" alt="منتج 6">
       <h3>lip stick code: 4102</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
     <div class="product-card" data-name="lib gloss might cinema code: 1211" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/l8.webp">
-      <img src="img/LAFEMME_FOR_MEKEUP/l8.webp" alt="منتج 7">
+      data-img="img/MEKEUP/l8.webp">
+      <img src="img/MEKEUP/l8.webp" alt="منتج 7">
       <h3>lib gloss might cinema code: 1211</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
-    <div class="product-card" data-name="Lipstick Shade No: 09" data-price="400" data-img="img/LAFEMME_FOR_MEKEUP/l9.webp">
-      <img src="img/LAFEMME_FOR_MEKEUP/l9.webp" alt="منتج 8">
+    <div class="product-card" data-name="Lipstick Shade No: 09" data-price="400" data-img="img/MEKEUP/l9.webp">
+      <img src="img/MEKEUP/l9.webp" alt="منتج 8">
       <h3>Lipstick Shade No: 09</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
     <div class="product-card" data-name="Golden Rose Matte Lipstick Crayon - No: 29" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/l10.webp">
-      <img src="img/LAFEMME_FOR_MEKEUP/l10.webp" alt="منتج 9">
+      data-img="img/MEKEUP/l10.webp">
+      <img src="img/MEKEUP/l10.webp" alt="منتج 9">
       <h3>Golden Rose Matte Lipstick Crayon - No: 29</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
     <div class="product-card" data-name="ملمع شفاه مرطب من MN أحمر شفاه غير لامع - 12 قطعة" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/l11.webp">
-      <img src="img/LAFEMME_FOR_MEKEUP/l11.webp" alt="منتج 10">
+      data-img="img/MEKEUP/l11.webp">
+      <img src="img/MEKEUP/l11.webp" alt="منتج 10">
       <h3>ملمع شفاه مرطب من MN أحمر شفاه غير لامع - 12 قطعة</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
@@ -697,79 +803,79 @@
 </div>
   <div class="products-container" >
     <div class="product-card" data-name="SPIDER LASH MASCARA CODE: 1062" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/e1.jpg">
-      <img src="img/LAFEMME_FOR_MEKEUP/e1.jpg" alt="منتج 1">
+      data-img="img/MEKEUP/e1.jpg">
+      <img src="img/MEKEUP/e1.jpg" alt="منتج 1">
       <h3>SPIDER LASH MASCARA CODE: 1062</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
     <div class="product-card" data-name="ULTRA BACK MASCARA CODE: 5074" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/e2.jpg">
-      <img src="img/LAFEMME_FOR_MEKEUP/e2.jpg" alt="منتج 2">
+      data-img="img/MEKEUP/e2.jpg">
+      <img src="img/MEKEUP/e2.jpg" alt="منتج 2">
       <h3>ULTRA BACK MASCARA CODE: 5074</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
     <div class="product-card" data-name="كحل سائل ديناميكي أسود غير لامع من مايت سينما" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/e3.jpg">
-      <img src="img/LAFEMME_FOR_MEKEUP/e3.jpg" alt="منتج 3">
+      data-img="img/MEKEUP/e3.jpg">
+      <img src="img/MEKEUP/e3.jpg" alt="منتج 3">
       <h3>كحل سائل ديناميكي أسود غير لامع من مايت سينما</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
-    <div class="product-card" data-name="Eyeliner code: 1122" data-price="400" data-img="img/LAFEMME_FOR_MEKEUP/e5.jpg">
-      <img src="img/LAFEMME_FOR_MEKEUP/e5.jpg" alt="منتج 4">
+    <div class="product-card" data-name="Eyeliner code: 1122" data-price="400" data-img="img/MEKEUP/e5.jpg">
+      <img src="img/MEKEUP/e5.jpg" alt="منتج 4">
       <h3>Eyeliner code: 1122</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
     <div class="product-card" data-name="palette Eye shadow code: 1076" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/e4.jpg">
-      <img src="img/LAFEMME_FOR_MEKEUP/e4.jpg" alt="منتج 5">
+      data-img="img/MEKEUP/e4.jpg">
+      <img src="img/MEKEUP/e4.jpg" alt="منتج 5">
       <h3>palette Eye shadow code: 1076</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
     <div class="product-card" data-name="chocolate Eyeshadow Palette code: 2571" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/eye1.jpg">
-      <img src="img/LAFEMME_FOR_MEKEUP/eye1.jpg" alt="منتج 6">
+      data-img="img/MEKEUP/eye1.jpg">
+      <img src="img/MEKEUP/eye1.jpg" alt="منتج 6">
       <h3>chocolate Eyeshadow Palette code: 2571</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
     <div class="product-card" data-name="ماسكارا Essence Lash Princess False Lash Effect" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/e6.webp">
-      <img src="img/LAFEMME_FOR_MEKEUP/e6.webp" alt="منتج 7">
+      data-img="img/MEKEUP/e6.webp">
+      <img src="img/MEKEUP/e6.webp" alt="منتج 7">
       <h3>ماسكارا Essence Lash Princess False Lash Effect باللون الأسود - مقاومة للماء</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
     <div class="product-card" data-name="محدد العيون السائل الديناميكي من مي ناو" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/e7.webp">
-      <img src="img/LAFEMME_FOR_MEKEUP/e7.webp" alt="منتج 8">
+      data-img="img/MEKEUP/e7.webp">
+      <img src="img/MEKEUP/e7.webp" alt="منتج 8">
       <h3>محدد العيون السائل الديناميكي من مي ناو باللون الأسود - E4115</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
     <div class="product-card" data-name="قلم كحل ايسنس ( 04 أبيض )" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/e8.webp">
-      <img src="img/LAFEMME_FOR_MEKEUP/e8.webp" alt="منتج 9">
+      data-img="img/MEKEUP/e8.webp">
+      <img src="img/MEKEUP/e8.webp" alt="منتج 9">
       <h3>قلم كحل ايسنس ( 04 أبيض )</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
     
     <div class="product-card" data-name="قلم كحل كاجال من مي ناو رقم E470 - 12 لونًا" data-price="400"
-      data-img="img/LAFEMME_FOR_MEKEUP/e9.webp">
-      <img src="img/LAFEMME_FOR_MEKEUP/e9.webp" alt="منتج 10">
+      data-img="img/MEKEUP/e9.webp">
+      <img src="img/MEKEUP/e9.webp" alt="منتج 10">
       <h3>قلم كحل كاجال من مي ناو رقم E470 - 12 لونًا</h3>
       <p class="price" data-original-price="400">EG 400</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
@@ -783,77 +889,77 @@
     <h2> ادوات المكياج </h2>
   </div>
   <div class="products-container">
-    <div class="product-card" data-name="مجموعة Real Techniques By Sam & Nic Ultimate Base Set" data-price="400" data-img="img/LAFEMME_FOR_MEKEUP/b1.webp">
-      <img src="img/LAFEMME_FOR_MEKEUP/b1.webp" alt="منتج 1">
+    <div class="product-card" data-name="مجموعة Real Techniques By Sam & Nic Ultimate Base Set" data-price="400" data-img="img/MEKEUP/b1.webp">
+      <img src="img/MEKEUP/b1.webp" alt="منتج 1">
       <h3>مجموعة Real Techniques By Sam & Nic Ultimate Base Set لكريم الأساس + الكونسيلر</h3>
       <p class="price" data-original-price="400">EG 400</p>
     <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
 <div class="product-card" data-name="فرشاة مكياج Real Techniques Ultra Plush Blush" data-price="400"
-  data-img="img/LAFEMME_FOR_MEKEUP/b2.webp">
-  <img src="img/LAFEMME_FOR_MEKEUP/b2.webp" alt="منتج 2">
+  data-img="img/MEKEUP/b2.webp">
+  <img src="img/MEKEUP/b2.webp" alt="منتج 2">
   <h3>فرشاة مكياج Real Techniques Ultra Plush Blush، لبودرة أحمر الخدود والبرونزر</h3>
   <p class="price" data-original-price="400">EG 400</p>
   <button class="add-to-cart">إضافة إلى السلة</button>
 </div>
 
 <div class="product-card" data-name="مجموعة فرشاة احترافية من كارا بيوتي" data-price="400"
-  data-img="img/LAFEMME_FOR_MEKEUP/b3.webp">
-  <img src="img/LAFEMME_FOR_MEKEUP/b3.webp" alt="منتج 3">
+  data-img="img/MEKEUP/b3.webp">
+  <img src="img/MEKEUP/b3.webp" alt="منتج 3">
   <h3>مجموعة فرشاة احترافية من كارا بيوتي</h3>
   <p class="price" data-original-price="400">EG 400</p>
   <button class="add-to-cart">إضافة إلى السلة</button>
 </div>
 
-<div class="product-card" data-name="فرشاة تظليل الجفون" data-price="400" data-img="img/LAFEMME_FOR_MEKEUP/b4.webp">
-  <img src="img/LAFEMME_FOR_MEKEUP/b4.webp" alt="منتج 4">
+<div class="product-card" data-name="فرشاة تظليل الجفون" data-price="400" data-img="img/MEKEUP/b4.webp">
+  <img src="img/MEKEUP/b4.webp" alt="منتج 4">
   <h3>فرشاة تظليل الجفون</h3>
   <p class="price" data-original-price="400">EG 400</p>
   <button class="add-to-cart">إضافة إلى السلة</button>
 </div>
 
-<div class="product-card" data-name="فرشاة ظلال العيون" data-price="400" data-img="img/LAFEMME_FOR_MEKEUP/b6.webp">
-  <img src="img/LAFEMME_FOR_MEKEUP/b6.webp" alt="منتج 5">
+<div class="product-card" data-name="فرشاة ظلال العيون" data-price="400" data-img="img/MEKEUP/b6.webp">
+  <img src="img/MEKEUP/b6.webp" alt="منتج 5">
   <h3>فرشاة ظلال العيون</h3>
   <p class="price" data-original-price="400">EG 400</p>
   <button class="add-to-cart">إضافة إلى السلة</button>
 </div>
 
 <div class="product-card" data-name="فرشاة كابوكي للوجه والجسم من ريهانا" data-price="400"
-  data-img="img/LAFEMME_FOR_MEKEUP/b5.webp">
-  <img src="img/LAFEMME_FOR_MEKEUP/b5.webp" alt="منتج 6">
+  data-img="img/MEKEUP/b5.webp">
+  <img src="img/MEKEUP/b5.webp" alt="منتج 6">
   <h3>فرشاة كابوكي للوجه والجسم من ريهانا</h3>
   <p class="price" data-original-price="400">EG 400</p>
   <button class="add-to-cart">إضافة إلى السلة</button>
 </div>
 
 <div class="product-card" data-name="منظف ​​الوجه بايو بلندر" data-price="400"
-  data-img="img/LAFEMME_FOR_MEKEUP/b7.webp">
-  <img src="img/LAFEMME_FOR_MEKEUP/b7.webp" alt="منتج 7">
+  data-img="img/MEKEUP/b7.webp">
+  <img src="img/MEKEUP/b7.webp" alt="منتج 7">
   <h3>منظف ​​الوجه بايو بلندر</h3>
   <p class="price" data-original-price="400">EG 400</p>
   <button class="add-to-cart">إضافة إلى السلة</button>
 </div>
 
 <div class="product-card" data-name="مكبس الرموش من بروش وركس باللون الوردي" data-price="400"
-  data-img="img/LAFEMME_FOR_MEKEUP/b8.avif">
-  <img src="img/LAFEMME_FOR_MEKEUP/b8.avif" alt="منتج 8">
+  data-img="img/MEKEUP/b8.avif">
+  <img src="img/MEKEUP/b8.avif" alt="منتج 8">
   <h3>مكبس الرموش من بروش وركس باللون الوردي</h3>
   <p class="price" data-original-price="400">EG 400</p>
   <button class="add-to-cart">إضافة إلى السلة</button>
 </div>
 
 <div class="product-card" data-name="إسفنجة بروش وركس XL للبشرة" data-price="400"
-  data-img="img/LAFEMME_FOR_MEKEUP/b9.avif">
-  <img src="img/LAFEMME_FOR_MEKEUP/b9.avif" alt="منتج 9">
+  data-img="img/MEKEUP/b9.avif">
+  <img src="img/MEKEUP/b9.avif" alt="منتج 9">
   <h3>إسفنجة بروش وركس XL للبشرة</h3>
   <p class="price" data-original-price="400">EG 400</p>
   <button class="add-to-cart">إضافة إلى السلة</button>
 </div>
 
 <div class="product-card" data-name="مرآة بروش ووركس المدمجة" data-price="400"
-  data-img="img/LAFEMME_FOR_MEKEUP/b10.avif">
-  <img src="img/LAFEMME_FOR_MEKEUP/b10.avif" alt="منتج 10">
+  data-img="img/MEKEUP/b10.avif">
+  <img src="img/MEKEUP/b10.avif" alt="منتج 10">
   <h3>مرآة بروش ووركس المدمجة</h3>
   <p class="price" data-original-price="400">EG 400</p>
   <button class="add-to-cart">إضافة إلى السلة</button>
@@ -894,6 +1000,15 @@
   </footer>
 
   <script>
+
+ function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function scrollToBottom() {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  }
+
  const cart = [];
 
   document.querySelectorAll('.add-to-cart').forEach(button => {

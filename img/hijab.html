@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIJAB</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Cairo', sans-serif;
+            background-color: #fefefe;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        .header {
+  background-color: #413838; /* أو استخدم fce4ec */
+  padding: 20px 0;
+}
+
+/* =============== الحاوية العامة =============== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  bottom: 20px;
+}
+
+/* =============== الشعار (اللوغو) =============== */
+/*logo*/
+.logo {
+  font-size: 28px;
+  margin: 0;
+}
+
+.logo img {
+  height: 100px;
+  width: 300px;
+  position: relative;
+  top: 73px;
+  animation: logoEntrance 1s ease forwards;
+  transition: transform .3s ease, box-shadow 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(236, 94, 142, 0.3);
+  animation: wiggle .5s ease-in-out;
+}
+
+@keyframes logoEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(3deg);
+  }
+
+  50% {
+    transform: rotate(-3deg);
+  }
+
+  75% {
+    transform: rotate(2deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+        
+
+        /* =============== Dropdown Menu Styling =============== */
+  .dropdown {
+    position: absolute;
+    left: -100px;
+    top: 70px;
+    z-index: 1;
+
+  }
+
+  .dropbtn {
+    background-color: #d63384;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    transition: background-color 0.3s ease;
+  }
+
+  .dropbtn:hover {
+    background-color: #e91e63;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    z-index: 1;
+    direction: rtl;
+  }
+
+  .dropdown-content a {
+    color: #d63384;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Cairo', sans-serif;
+    border-bottom: 1px solid #fce4ec;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #f8bbd0;
+    color: #fff;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a:last-child {
+    border-bottom: none;
+  }
+
+  .nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 12px;
+  margin: 40px auto 20px;
+  direction: rtl;
+  max-width: 95%;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  right:  50px;
+  }
+
+  .footer {
+  background: #000;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer .container7 {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.footer .column {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 10px;
+}
+
+.footer h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #f39c12;
+  font-weight: normal;
+}
+
+.footer p,
+.footer a {
+  color: white;
+  text-decoration: none;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #f39c12;
+}
+
+/* تنسيق أيقونات السوشيال */
+.footer .social-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.footer .social-icons a {
+  font-size: 20px;
+  color: white;
+  transition: 0.3s;
+}
+
+.footer .social-icons a:hover {
+  color: #30b8b3;
+}
+
+.footer .copyright {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #777;
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid #444;
+}
+  
+
+    </style>
+</head>
+<body>
+    <!--hash-->
+<div class="hash">
+    <h3>متاح التوصيل</h3>
+</div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <img src="img/logo2.png" alt="La Femme Logo">
+            </a>
+        <!-- Navigation -->
+            <div class="nav">
+                <a href="index.html">الرئيسية</a>
+                <a href="about.html">من نحن</a>
+                <a href="services.html">الخدمات</a>
+                <a href="contact.html">اتصل بنا</a>
+            </div>
+
+          <!-- Dropdown Menu -->
+<div class="dropdown">
+  <button class="dropbtn">&#9776; القائمة</button> <!-- أيقونة ☰ -->
+  <div class="dropdown-content">
+    <a href="#makeup.html"> مستحضرات التجميل</a>
+        <a href="#section2"> الحقائب والاحذية</a>
+        <a href="#section3"> الاكسسوارات</a>
+        <a href="#section3"> الطرح</a>
+  </div>
+</div>
+
+  
+
+        </div>
+    </header>
+
+    <!-- Footer -->
+ 
+  <footer class="footer">
+    <div class="container7">
+      <div class="column">
+        <h3 id="contact-title">Contact Information</h3>
+        <p>📞 <span id="phone-text">Phone:</span> <a href="tel:01212348798">01212348798</a></p>
+        <p>📞 <span id="phone-text">Phone:</span> <a href="tel:01017102110">01017102110</a></p>
+      </div>
+      <div class="column">
+        <h3 id="important-links">Important Links</h3>
+        <a href="#" id="privacy-policy">Privacy Policy</a>
+        <br>
+        <a href="#" id="terms-of-use">Terms of Use</a>
+      </div>
+      <div class="column social">
+        <h3 id="follow-us">Follow Us</h3>
+        <a href="https://www.facebook.com/share/16AodzZejo/"> <i class="fab fa-facebook-f"></i></a>
+        
+        
+        <br>
+        <a href="https://www.instagram.com/lafemme_woman?igsh=ejhuY3IybGpxanM4"> <i class="fab fa-instagram"></i></a>
+<br>
+<a href="https://www.tiktok.com/@osama.elbannan?_t=ZS-8uchrhB8KzY&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>      
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2025 <span id="all-rights">All Rights Reserved</span> | <span id="kgm-marketing">KGM Marketing</span>
+    </div>
+  </footer>
+
+</body>
+</html>

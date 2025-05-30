@@ -199,6 +199,8 @@ body {
   font-weight: bold;
   font-size: 18px;
   white-space: nowrap;
+  letter-spacing: .5px; /* مسافة صغيرة بين الحروف */
+  word-spacing: 10px;   /* مسافة أكبر بين الكلمات */
 }
 
 @keyframes scrollText {

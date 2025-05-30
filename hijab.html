@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HIJAB</title>
+        <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+
+  /*whatsapp icon*/
+  .whatsapp-float {
+    position: fixed;
+    bottom: 160px;
+    right: 20px; /* بدل left: 20px */
+    width: 55px;
+    height: 55px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    transition: transform 0.3s ease;
+  }
+  
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+  }
+  
+  
+
+  /*scroll icon*/
+  .scroll-button {
+    position: fixed;
+    /* Keep buttons fixed on the screen */
+    width: 50px;
+    height: 50px;
+    background-color: #ec5e8e;
+    /* Vibrant red color */
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    /* Make buttons circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Add shadow for depth */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 100;
+    /* Ensure buttons stay above content */
+  }
+
+  /* Hover Effect */
+  .scroll-button:hover {
+    background-color: #30b8b3;
+    /* Darker red on hover */
+    transform: scale(1.1);
+    /* Slight zoom effect */
+  }
+
+  /* Scroll Up Button */
+  .scroll-up {
+    bottom: 80px;
+    /* Position button 80px from the bottom */
+    right: 20px;
+    /* Position button 20px from the right */
+  }
+
+  /* Scroll Down Button */
+  .scroll-down {
+    bottom: 20px;
+    /* Position button 20px from the bottom */
+    right: 20px;
+    /* Position button 20px from the right */
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .scroll-button {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+    }
+  }
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+        /*الصور المصغرة*/
+
+.header-container {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.header-container h1 {
+  color: #333;
+  font-size: 2em;
+  margin: 0;
+}
+
+/*========= THUMBNAILS =========*/
+.thumbnails-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.thumbnail-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnail i {
+  font-size: 30px;
+  color: #555;
+}
+
+.thumbnail-link span {
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.thumbnail-link:hover .thumbnail {
+  border-color: gold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*========= FULL LINE =========*/
+.full-line {
+  width: 90%;
+  margin: 30px auto;
+  border: none;
+  border-top: 2px solid #ccc;
+}
+/*========= SECTION TITLES =========*/
+.section-title,
+.section-title3 {
+      background: #ffccdc;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+
+.section-title h2,
+.section-title3 h2 {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 26px;
+  color: #0e6977;
+  font-family: 'Cairo', sans-serif;
+  border: 2px solid #f06292;
+  border-radius: 12px;
+  background-color: #fefefe;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+  right: 0; /* إزالة الإزاحة */
+}
+
+.section-title h2:hover,
+.section-title3 h2:hover {
+  color: #f06292;
+}
+
+/*========= ANIMATION =========*/
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/*========= PRODUCTS =========*/
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 4 أعمدة ثابتة */
+  gap: 20px;
+}
+
+
+.product-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* يجعل الزر يذهب إلى الأسفل */
+  height: 100%; /* أو ارتفاع محدد */
+
+    }
+
+.product-card img {
+      max-width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+ .product-card h3 {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+.product-card p {
+  color: #8e0a0a;
+  font-size: 20px;
+}
+
+.price {
+      color: #e91e63;
+      font-weight: bold;
+    }
+/*========= RESPONSIVE DESIGN =========*/
+@media (max-width: 768px) {
+  .products-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 4 أعمدة ثابتة */
+  gap: 20px;
+}
+
+  .header-container {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  .header-container h1 {
+    font-size: 1.6em;
+  }
+
+  .thumbnails-container {
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .thumbnail {
+    width: 70px;
+    height: 70px;
+  }
+
+  .thumbnail-link span {
+    font-size: 0.85em;
+  }
+
+  .section-title h2,
+  .section-title3 h2 {
+    font-size: 22px;
+    padding: 8px 16px;
+  }
+
+  .product-card img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+   .products-container {
+    grid-template-columns: repeat(auto-fill, minmax(2, 1fr));
+    max-width: 1000px;
+    
+  }
+  .header-container h1 {
+    font-size: 1.4em;
+  }
+
+  .thumbnails-container {
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .thumbnail {
+    width: 60px;
+    height: 60px;
+  }
+
+  .thumbnail i {
+    font-size: 24px;
+  }
+
+  .thumbnail-link span {
+    font-size: 0.8em;
+  }
+
+  .section-title h2,
+  .section-title3 h2 {
+    font-size: 20px;
+    padding: 6px 12px;
+  }
+
+  .product-card {
+    padding: 10px;
+  }
+
+  .product-card img {
+    height: 180px;
+  }
+
+  .product-card h3 {
+    font-size: 16px;
+  }
+
+  .product-card p {
+    font-size: 18px;
+  }
+}
+
+.footer {
+  background: #000;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer .container7 {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.footer .column {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 10px;
+}
+
+.footer h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #f39c12;
+  font-weight: normal;
+}
+
+.footer p,
+.footer a {
+  color: white;
+  text-decoration: none;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #f39c12;
+}
+
+/* تنسيق أيقونات السوشيال */
+.footer .social-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.footer .social-icons a {
+  font-size: 20px;
+  color: white;
+  transition: 0.3s;
+}
+
+.footer .social-icons a:hover {
+  color: #30b8b3;
+}
+
+.footer .copyright {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #777;
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid #444;
+}
+
+        
+    </style>
+</head>
+
+<body>
+<!--hash-->
+<div class="hash">
+    <h3> متاح التوصيل والشحن لجميع المحافظات </h3>
+</div>
+
+<!--whatsapp icon-->
+<a href="https://wa.me/01212348798" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!--scroll icon-->
+<!-- Scroll Up -->
+<button class="scroll-button scroll-up" onclick="scrollToTop()">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<button class="scroll-button scroll-down" onclick="scrollToBottom()">
+  <i class="fas fa-arrow-down"></i>
+</button>
+
+
+<!-- أيقونة السلة العائمة -->
+<div class="cart-icon" id="cart-icon">
+  🛒
+  <span id="cart-count">0</span>
+</div>
+
+<!-- محتوى السلة المنبثق -->
+<div class="cart-popup" id="cart-popup">
+  <h2>🛒 سلة المشتريات</h2>
+  <ul id="cart-items"></ul>
+  <div id="total-price" style="font-weight:bold; margin-top:10px;"></div>
+  <button id="checkout">إتمام الشراء عبر واتساب</button>
+</div>
+
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <img src="img/logo2.png" alt="La Femme Logo">
+            </a>
+
+            <!-- Navigation -->
+            <div class="nav">
+                <a href="index.html">الرئيسية</a>
+                <a href="about.html">من نحن</a>
+                <a href="services.html">الخدمات</a>
+                <a href="contact.html">اتصل بنا</a>
+            </div>
+
+          <!-- Dropdown Menu -->
+<div class="dropdown">
+  <button class="dropbtn">&#9776; القائمة</button> <!-- أيقونة ☰ -->
+  <div class="dropdown-content">
+    <a href="makeup.html"> مستحضرات التجميل</a>
+        <a href="#section2"> الحقائب والاحذية</a>
+        <a href="#section3"> الاكسسوارات</a>
+        <a href="hijab.html"> مستلزمات الحجاب</a>
+  </div>
+</div>
+
+  
+
+        </div>
+    </header>
+
+  <div class="section-title3">
+    <h2>الباندانا والبونيه</h2>
+</div>
+
+  <div class="products-container" >
+
+    <div class="product-card" data-name="بندانة" data-price="400" data-img="img/HEJAB/b1.jpg">
+      <img src="img/HEJAB/b1.jpg" alt="منتج 1">
+      <h3>بندانة </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+     <div class="product-card" data-name="بندانة" data-price="400" data-img="img/HEJAB/b2.jpg">
+      <img src="img/HEJAB/b2.jpg" alt="منتج 2">
+      <h3>بندانة </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+     <div class="product-card" data-name="بندانة" data-price="400" data-img="img/HEJAB/b3.jpg">
+      <img src="img/HEJAB/b3.jpg" alt="منتج 3">
+      <h3>بندانة </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+     <div class="product-card" data-name="بندانة" data-price="400" data-img="img/HEJAB/b4.jpg">
+      <img src="img/HEJAB/b4.jpg" alt="منتج 4">
+      <h3>بندانة </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+     <div class="product-card" data-name="بندانة" data-price="400" data-img="img/HEJAB/b5.jpg">
+      <img src="img/HEJAB/b5.jpg" alt="منتج 5">
+      <h3>بندانة </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+     <div class="product-card" data-name="بونيه كروس" data-price="400" data-img="img/HEJAB/b6.jpg">
+      <img src="img/HEJAB/b6.jpg" alt="منتج 6">
+      <h3>بونيه كروس </h3>
+      <p></p>
+      <p class="price" data-original-price="85.00">EG 85.00</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+     <div class="product-card" data-name="بونيه بدون خياطة قطن" data-price="400" data-img="img/HEJAB/b7.jpg">
+      <img src="img/HEJAB/b7.jpg" alt="منتج 7">
+      <h3>بونيه بدون خياطة قطن </h3>
+      <p></p>
+      <p class="price" data-original-price="75.00">EG 75.00</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+     <div class="product-card" data-name="بونيه كشكشه" data-price="85.00" data-img="img/HEJAB/b8.jpg">
+      <img src="img/HEJAB/b8.webp" alt="8منتج ">
+      <h3>بونيه كشكشه</h3>
+      <p></p>
+      <p class="price" data-original-price="85.00">EG 85.00</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="بونيه تركي" data-price="95.00" data-img="img/HEJAB/b9.jpg">
+      <img src="img/HEJAB/b9.webp" alt="منتج 9">
+      <h3>بونيه تركي</h3>
+      <p></p>
+      <p class="price" data-original-price="95.00">EG 95.00</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+     <div class="product-card" data-name="بونيه كويتي" data-price="85.00" data-img="img/HEJAB/b10.jpg">
+      <img src="img/HEJAB/b10.webp" alt="منتج 10">
+      <h3>بونيه كويتي</h3>
+      <p></p>
+      <p class="price" data-original-price="85.00">EG 85.00</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+  </div>
+  <hr class="full-line">
+  
+<div class="section-title3">
+    <h2> الطرح</h2>
+</div>
+
+  <div class="products-container" >
+
+    <div class="product-card" data-name="طرحة طويلة سماوي اللون " data-price="400" data-img="img/HEJAB/1.jpg">
+      <img src="img/HEJAB/1.jpg" alt="منتج 1">
+      <h3>طرحة طويلة سماوي اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة طويلة بنفسجي اللون " data-price="400" data-img="img/HEJAB/2.jpg">
+      <img src="img/HEJAB/2.jpg" alt="منتج 2">
+      <h3>طرحة طويلة بنفسجي اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة طويلة اسود اللون " data-price="400" data-img="img/HEJAB/3.jpg">
+      <img src="img/HEJAB/3.jpg" alt="منتج 3">
+      <h3>طرحة طويلة اسود اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة طويلة اخضر اللون " data-price="400" data-img="img/HEJAB/4.jpg">
+      <img src="img/HEJAB/4.jpg" alt="منتج 4">
+      <h3>طرحة طويلة اخضر اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة طويلة احمر اللون " data-price="400" data-img="img/HEJAB/5.jpg">
+      <img src="img/HEJAB/5.jpg" alt="منتج 5">
+      <h3>طرحة طويلة احمر اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name="طرحة تربون اخضر اللون " data-price="400" data-img="img/HEJAB/6.jpg">
+      <img src="img/HEJAB/6.jpg" alt="منتج 6">
+      <h3>طرحة تربون اخضر اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>  
+    <div class="product-card" data-name="طرحة تربون كشمير اللون " data-price="400" data-img="img/HEJAB/7.jpg">
+      <img src="img/HEJAB/7.jpg" alt="منتج 7">
+      <h3>طرحة تربون كشمير اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة تربون بترولي اللون " data-price="400" data-img="img/HEJAB/8.jpg">
+      <img src="img/HEJAB/8.jpg" alt="منتج 8">
+      <h3>طرحة تربون بترولي اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة تربون بيج اللون " data-price="400" data-img="img/HEJAB/9.jpg">
+      <img src="img/HEJAB/9.jpg" alt="منتج 9">
+      <h3>طرحة تربون بيج اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة تربون رمادي اللون " data-price="400" data-img="img/HEJAB/10.jpg">
+      <img src="img/HEJAB/10.jpg" alt="منتج 10">
+      <h3>طرحة تربون رمادي اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة تربون برتقالي اللون " data-price="400" data-img="img/HEJAB/11.jpg">
+      <img src="img/HEJAB/11.jpg" alt="منتج 11">
+      <h3>طرحة تربون برتقالي اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة تربون احمر اللون " data-price="400" data-img="img/HEJAB/12.jpg">
+      <img src="img/HEJAB/12.jpg" alt="منتج 12">
+      <h3>طرحة تربون احمر اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة تربون اسود اللون " data-price="400" data-img="img/HEJAB/13.jpg">
+      <img src="img/HEJAB/13.jpg" alt="منتج 13">
+      <h3>طرحة تربون اسود اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة تربون ابيض اللون " data-price="400" data-img="img/HEJAB/14.jpg">
+      <img src="img/HEJAB/14.jpg" alt="منتج 14">
+      <h3>طرحة تربون ابيض اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة قطن جيل اسود اللون " data-price="400" data-img="img/HEJAB/15.jpg">
+      <img src="img/HEJAB/15.jpg" alt="منتج 15">
+      <h3>طرحة قطن جيل اسود اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة قطن جيل بيج اللون " data-price="400" data-img="img/HEJAB/16.jpg">
+      <img src="img/HEJAB/16.jpg" alt="منتج 16">
+      <h3>طرحة قطن جيل بيج اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة قطن جيل ازرق اللون " data-price="400" data-img="img/HEJAB/17.jpg">
+      <img src="img/HEJAB/17.jpg" alt="منتج 17">
+      <h3>طرحةقطن جيل ازرق اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة قطن جيل بني فاتح اللون " data-price="400" data-img="img/HEJAB/18.jpg">
+      <img src="img/HEJAB/18.jpg" alt="منتج 18">
+      <h3>طرحة قطن جيل بني فاتح اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة قطن جيل كجلي اللون " data-price="400" data-img="img/HEJAB/19.jpg">
+      <img src="img/HEJAB/19.jpg" alt="منتج 19">
+      <h3>طرحة قطن جيل كجلي اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة قطن جيل ابيض اللون " data-price="400" data-img="img/HEJAB/20.jpg">
+      <img src="img/HEJAB/20.jpg" alt="منتج 20">
+      <h3>طرحة قطن جيل ابيض اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة قطن جيل بني محروق اللون " data-price="400" data-img="img/HEJAB/21.jpg">
+      <img src="img/HEJAB/21.jpg" alt="منتج 21">
+      <h3>طرحة قطن جيل بني محروق اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة قطن جيل بنفسجي اللون " data-price="400" data-img="img/HEJAB/22.jpg">
+      <img src="img/HEJAB/22.jpg" alt="منتج 22">
+      <h3>طرحة قطن جيل بنفسجي اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة شاش قطن رمادي اللون " data-price="400" data-img="img/HEJAB/23.jpg">
+      <img src="img/HEJAB/23.jpg" alt="منتج 23">
+      <h3>طرحة شاش قطن رمادي اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة شاش قطن بيج فاتح اللون " data-price="400" data-img="img/HEJAB/24.jpg">
+      <img src="img/HEJAB/24.jpg" alt="منتج 24">
+      <h3>طرحة شاش قطن بيج فاتح اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name=" طرحة شاش قطن بني فاتح اللون" data-price="400" data-img="img/HEJAB/25.jpg">
+      <img src="img/HEJAB/25.jpg" alt="منتج 25">
+      <h3>طرحة شاش قطن بني فاتح اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة شاش قطن كحلي اللون " data-price="400" data-img="img/HEJAB/26.jpg">
+      <img src="img/HEJAB/26.jpg" alt="منتج 26">
+      <h3>طرحة شاش قطن كحلي اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة شاش قطن بيج غامق اللون " data-price="400" data-img="img/HEJAB/27.jpg">
+      <img src="img/HEJAB/27.jpg" alt="منتج 27">
+      <h3>طرحة شاش قطن بيج غامق اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+     <div class="product-card" data-name="طرحة شاش قطن بيج غامق اللون " data-price="400" data-img="img/HEJAB/28.jpg">
+      <img src="img/HEJAB/28.jpg" alt="منتج 28">
+      <h3>طرحة شاش قطن بيج غامق اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+     <div class="product-card" data-name="طرحة شاش قطن بيج غامق اللون " data-price="400" data-img="img/HEJAB/29.jpg">
+      <img src="img/HEJAB/29.jpg" alt="منتج 29">
+      <h3>طرحة شاش قطن بيج غامق اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+     <div class="product-card" data-name="طرحة شاش قطن بيج غامق اللون " data-price="400" data-img="img/HEJAB/30.jpg">
+      <img src="img/HEJAB/30.jpg" alt="منتج 30">
+      <h3>طرحة شاش قطن بيج غامق اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+     <div class="product-card" data-name="طرحة شاش قطن بيج غامق اللون " data-price="400" data-img="img/HEJAB/31.jpg">
+      <img src="img/HEJAB/31.jpg" alt="منتج 31">
+      <h3>طرحة شاش قطن بيج غامق اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+     <div class="product-card" data-name="طرحة شاش قطن بيج غامق اللون " data-price="400" data-img="img/HEJAB/32.jpg">
+      <img src="img/HEJAB/32.jpg" alt="منتج 32">
+      <h3>طرحة شاش قطن بيج غامق اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+     <div class="product-card" data-name="طرحة كتان احمر غامق اللون " data-price="400" data-img="img/HEJAB/33.jpg">
+      <img src="img/HEJAB/33.jpg" alt="منتج 33">
+      <h3>طرحة كتان احمر غامق اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة كتان زيتي غامق اللون " data-price="400" data-img="img/HEJAB/34.jpg">
+      <img src="img/HEJAB/34.jpg" alt="منتج 34">
+      <h3>طرحة كتان زيتي غامق اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة كتان احمر غامق اللون " data-price="400" data-img="img/HEJAB/35.jpg">
+      <img src="img/HEJAB/35.jpg" alt="منتج 35">
+      <h3>طرحة كتان احمر غامق اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة كتان فوشيا اللون " data-price="400" data-img="img/HEJAB/36.jpg">
+      <img src="img/HEJAB/36.jpg" alt="منتج 36">
+      <h3>طرحة كتان فوشيا اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة كتان كريمي اللون " data-price="400" data-img="img/HEJAB/37.jpg">
+      <img src="img/HEJAB/37.jpg" alt="منتج 37">
+      <h3>طرحة كتان كريمي اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة كتان رصاصي فاتح اللون " data-price="400" data-img="img/HEJAB/38.jpg">
+      <img src="img/HEJAB/38.jpg" alt="منتج 38">
+      <h3>طرحة كتان رصاصي فاتح اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة كتان ابيض اللون " data-price="400" data-img="img/HEJAB/39.jpg">
+      <img src="img/HEJAB/39.jpg" alt="منتج 39">
+      <h3>طرحة كتان ابيض اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة كتان بيج رملي اللون " data-price="400" data-img="img/HEJAB/40.jpg">
+      <img src="img/HEJAB/40.jpg" alt="منتج 40">
+      <h3>طرحة كتان بيج رملي اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة كتان كحلي فاتح اللون " data-price="400" data-img="img/HEJAB/41.jpg">
+      <img src="img/HEJAB/41.jpg" alt="منتج 41">
+      <h3>طرحة كتان كحلي فاتح اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة كتان ازرق اللون " data-price="400" data-img="img/HEJAB/42.jpg">
+      <img src="img/HEJAB/42.jpg" alt="منتج 42">
+      <h3>طرحة كتان ازرق اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+    <div class="product-card" data-name="طرحة كتان رمادي فاتح اللون " data-price="400" data-img="img/HEJAB/43.jpg">
+      <img src="img/HEJAB/43.jpg" alt="منتج 43">
+      <h3>طرحة كتان رمادي فاتح اللون </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div> 
+
+
+
+  </div>
+  
+
+
+  
+  
+  
+<!-- Footer -->
+ 
+  <footer class="footer">
+    <div class="container7">
+      <div class="column">
+        <h3 id="contact-title">Contact Information</h3>
+        <p>📞 <span id="phone-text">Phone:</span> <a href="tel:01212348798">01212348798</a></p>
+        <p>📞 <span id="phone-text">Phone:</span> <a href="tel:01017102110">01017102110</a></p>
+      </div>
+      <div class="column">
+        <h3 id="important-links">Important Links</h3>
+        <a href="#" id="privacy-policy">Privacy Policy</a>
+        <br>
+        <a href="#" id="terms-of-use">Terms of Use</a>
+      </div>
+      <div class="column social">
+        <h3 id="follow-us">Follow Us</h3>
+        <a href="https://www.facebook.com/share/16AodzZejo/"> <i class="fab fa-facebook-f"></i></a>
+        
+        
+        <br>
+        <a href="https://www.instagram.com/lafemme_woman?igsh=ejhuY3IybGpxanM4"> <i class="fab fa-instagram"></i></a>
+<br>
+<a href="https://www.tiktok.com/@osama.elbannan?_t=ZS-8uchrhB8KzY&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>      
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2025 <span id="all-rights">All Rights Reserved</span> | <span id="kgm-marketing">KGM Marketing</span>
+    </div>
+  </footer>
+
+  <script>
+
+ function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function scrollToBottom() {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  }
+
+ const cart = [];
+
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+      const productCard = button.closest('.product-card');
+      const name = productCard.dataset.name;
+      const price = parseFloat(productCard.dataset.price);
+      const img = productCard.dataset.img;
+
+      const existing = cart.find(item => item.name === name);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ name, price, quantity: 1, img });
+      }
+
+      renderCart();
+      updateCartCount();
+      openCart();
+    });
+  });
+
+  function renderCart() {
+    const cartItems = document.getElementById('cart-items');
+    cartItems.innerHTML = '';
+
+    cart.forEach((item, index) => {
+      const li = document.createElement('li');
+      li.classList.add('cart-item');
+
+      li.innerHTML = `
+    <img src="${item.img}" alt="${item.name}">
+    <div class="item-details">
+      <strong>${item.name}</strong> - ${item.price.toFixed(2)} EG
+      <div class="quantity-control">
+        <button class="decrease" data-index="${index}">-</button>
+        <span>${item.quantity}</span>
+        <button class="increase" data-index="${index}">+</button>
+        <button class="remove" data-index="${index}">🗑️</button>
+      </div>
+    </div>
+  `;
+
+      cartItems.appendChild(li);
+    });
+
+    // حساب السعر الإجمالي
+    const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+    // عرض السعر الإجمالي في العنصر المخصص (تأكد أن لديك عنصر بالمعرف total-price في الـ HTML)
+    const totalPriceElement = document.getElementById('total-price');
+    if (totalPriceElement) {
+      totalPriceElement.textContent = `السعر الإجمالي: ${totalPrice.toFixed(2)} EG`;
+    }
+
+    // إضافة مستمعات للأزرار بعد التحديث
+    document.querySelectorAll('#cart-items button.decrease').forEach(btn => {
+      btn.onclick = () => updateQuantity(+btn.dataset.index, -1);
+    });
+    document.querySelectorAll('#cart-items button.increase').forEach(btn => {
+      btn.onclick = () => updateQuantity(+btn.dataset.index, 1);
+    });
+    document.querySelectorAll('#cart-items button.remove').forEach(btn => {
+      btn.onclick = () => removeItem(+btn.dataset.index);
+    });
+  }
+
+  function updateQuantity(index, change) {
+    cart[index].quantity += change;
+    if (cart[index].quantity <= 0) {
+      cart.splice(index, 1);
+    }
+    renderCart();
+    updateCartCount();
+  }
+
+  function removeItem(index) {
+    cart.splice(index, 1);
+    renderCart();
+    updateCartCount();
+  }
+
+  document.getElementById('checkout').addEventListener('click', () => {
+    if (cart.length === 0) {
+      alert('السلة فارغة!');
+      return;
+    }
+
+    let message = '*طلب جديد من المتجر:*\n\n';
+    cart.forEach(item => {
+      message += `🛍️ *${item.name}*\nالكمية: ${item.quantity}\nالسعر: ${item.price.toFixed(2)} EG\nالصورة: ${window.location.origin}/${item.img}\n\n`;
+    });
+
+    // حساب السعر الإجمالي عند الإرسال أيضاً
+    const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    message += `\n*السعر الإجمالي: ${totalPrice.toFixed(2)} EG*`;
+
+    const phoneNumber = "+201276357603"; // رقم المتجر بدون +
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  });
+
+  function updateCartCount() {
+    const count = cart.reduce((total, item) => total + item.quantity, 0);
+    const cartCount = document.getElementById('cart-count');
+    if (cartCount) {
+      cartCount.textContent = count;
+      cartCount.style.display = count > 0 ? 'inline' : 'none';
+    }
+  }
+
+  const cartIcon = document.getElementById('cart-icon');
+  const cartPopup = document.getElementById('cart-popup');
+
+  cartIcon.addEventListener('click', (e) => {
+    e.stopPropagation();
+    cartPopup.classList.toggle('open');
+  });
+
+  document.addEventListener('click', () => {
+    cartPopup.classList.remove('open');
+  });
+
+  cartPopup.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+
+  function openCart() {
+    cartPopup.classList.add('open');
+  }
+
+  </script>
+
+</body>
+</html>
