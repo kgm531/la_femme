@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACCESSORIES</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /*whatsapp icon*/
+  .whatsapp-float {
+    position: fixed;
+    bottom: 160px;
+    right: 20px; /* بدل left: 20px */
+    width: 55px;
+    height: 55px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    transition: transform 0.3s ease;
+  }
+  
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+  }
+  
+  
+
+  /*scroll icon*/
+  .scroll-button {
+    position: fixed;
+    /* Keep buttons fixed on the screen */
+    width: 50px;
+    height: 50px;
+    background-color: #ec5e8e;
+    /* Vibrant red color */
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    /* Make buttons circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Add shadow for depth */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 100;
+    /* Ensure buttons stay above content */
+  }
+
+  /* Hover Effect */
+  .scroll-button:hover {
+    background-color: #30b8b3;
+    /* Darker red on hover */
+    transform: scale(1.1);
+    /* Slight zoom effect */
+  }
+
+  /* Scroll Up Button */
+  .scroll-up {
+    bottom: 80px;
+    /* Position button 80px from the bottom */
+    right: 20px;
+    /* Position button 20px from the right */
+  }
+
+  /* Scroll Down Button */
+  .scroll-down {
+    bottom: 20px;
+    /* Position button 20px from the bottom */
+    right: 20px;
+    /* Position button 20px from the right */
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .scroll-button {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+    }
+  }
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+  
+
+        /*الصور المصغرة*/
+
+.header-container {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.header-container h1 {
+  color: #333;
+  font-size: 2em;
+  margin: 0;
+}
+
+/*========= THUMBNAILS =========*/
+.thumbnails-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.thumbnail-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnail i {
+  font-size: 30px;
+  color: #555;
+}
+
+.thumbnail-link span {
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.thumbnail-link:hover .thumbnail {
+  border-color: gold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*========= FULL LINE =========*/
+.full-line {
+  width: 90%;
+  margin: 30px auto;
+  border: none;
+  border-top: 2px solid #ccc;
+}
+/*========= SECTION TITLES =========*/
+.section-title,
+.section-title3 {
+      background: #ffccdc;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+
+.section-title h2,
+.section-title3 h2 {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 26px;
+  color: #0e6977;
+  font-family: 'Cairo', sans-serif;
+  border: 2px solid #f06292;
+  border-radius: 12px;
+  background-color: #fefefe;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+  right: 0; /* إزالة الإزاحة */
+}
+
+.section-title h2:hover,
+.section-title3 h2:hover {
+  color: #f06292;
+}
+
+/*========= ANIMATION =========*/
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/*========= PRODUCTS =========*/
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 4 أعمدة ثابتة */
+  gap: 20px;
+}
+
+
+.product-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* يجعل الزر يذهب إلى الأسفل */
+  height: 100%; /* أو ارتفاع محدد */
+
+    }
+
+.product-card img {
+      max-width: 100%;
+      height: 340px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+ .product-card h3 {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+.product-card p {
+  color: #8e0a0a;
+  font-size: 20px;
+}
+
+.price {
+      color: #e91e63;
+      font-weight: bold;
+    }
+/*========= RESPONSIVE DESIGN =========*/
+@media (max-width: 768px) {
+  .products-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 4 أعمدة ثابتة */
+  gap: 20px;
+}
+
+  .header-container {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  .header-container h1 {
+    font-size: 1.6em;
+  }
+
+  .thumbnails-container {
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .thumbnail {
+    width: 70px;
+    height: 70px;
+  }
+
+  .thumbnail-link span {
+    font-size: 0.85em;
+  }
+
+  .section-title h2,
+  .section-title3 h2 {
+    font-size: 22px;
+    padding: 8px 16px;
+  }
+
+  .product-card img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+   .products-container {
+    grid-template-columns: repeat(auto-fill, minmax(2, 1fr));
+    max-width: 1000px;
+    
+  }
+  .header-container h1 {
+    font-size: 1.4em;
+  }
+
+  .thumbnails-container {
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .thumbnail {
+    width: 60px;
+    height: 60px;
+  }
+
+  .thumbnail i {
+    font-size: 24px;
+  }
+
+  .thumbnail-link span {
+    font-size: 0.8em;
+  }
+
+  .section-title h2,
+  .section-title3 h2 {
+    font-size: 20px;
+    padding: 6px 12px;
+  }
+
+  .product-card {
+    padding: 10px;
+  }
+
+  .product-card img {
+    height: 180px;
+  }
+
+  .product-card h3 {
+    font-size: 16px;
+  }
+
+  .product-card p {
+    font-size: 18px;
+  }
+}
+
+.footer {
+  background: #000;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer .container7 {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.footer .column {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 10px;
+}
+
+.footer h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #f39c12;
+  font-weight: normal;
+}
+
+.footer p,
+.footer a {
+  color: white;
+  text-decoration: none;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #f39c12;
+}
+
+/* تنسيق أيقونات السوشيال */
+.footer .social-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.footer .social-icons a {
+  font-size: 20px;
+  color: white;
+  transition: 0.3s;
+}
+
+.footer .social-icons a:hover {
+  color: #30b8b3;
+}
+
+.footer .copyright {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #777;
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid #444;
+}
+    </style>
+</head>
+<body>
+    <!--hash-->
+<div class="hash">
+    <h3>متاح التوصيل والشحن لجميع المحافظات  </h3>
+</div>
+
+<!--whatsapp icon-->
+<a href="https://wa.me/01212348798" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!--scroll icon-->
+<!-- Scroll Up -->
+<button class="scroll-button scroll-up" onclick="scrollToTop()">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<button class="scroll-button scroll-down" onclick="scrollToBottom()">
+  <i class="fas fa-arrow-down"></i>
+</button>
+
+<!-- أيقونة السلة العائمة -->
+<div class="cart-icon" id="cart-icon">
+  🛒
+  <span id="cart-count">0</span>
+</div>
+
+<!-- محتوى السلة المنبثق -->
+<div class="cart-popup" id="cart-popup">
+  <h2>🛒 سلة المشتريات</h2>
+  <ul id="cart-items"></ul>
+  <div id="total-price" style="font-weight:bold; margin-top:10px;"></div>
+  <button id="checkout">إتمام الشراء عبر واتساب</button>
+</div>
+
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <img src="img/logo2.png" alt="La Femme Logo">
+            </a>
+
+            <!-- Navigation -->
+            <div class="nav">
+                <a href="index.html">الرئيسية</a>
+                <a href="about.html">من نحن</a>
+                <a href="services.html">الخدمات</a>
+                <a href="contact.html">اتصل بنا</a>
+            </div>
+
+          <!-- Dropdown Menu -->
+<div class="dropdown">
+  <button class="dropbtn">&#9776; القائمة</button> <!-- أيقونة ☰ -->
+  <div class="dropdown-content">
+    <a href="makeup.html"> مستحضرات التجميل</a>
+        <a href="shose.html"> الحقائب والاحذية</a>
+        <a href="Accessories.html"> الاكسسوارات</a>
+        <a href="hijab.html"> مستلزمات الحجاب</a>
+  </div>
+</div>
+
+  
+
+        </div>
+    </header>
+
+ <!--الصور المصغرة-->
+  <div class="header-container">
+    <h1> اناقتك واكتمال شياكتك يبدأ من هنا</h1>
+</div>
+  <div class="thumbnails-container">
+     <a href="#sel" class="thumbnail-link">
+        <div class="thumbnail">
+            <img src="img/ACCESSORIES/s8.jpeg" alt="صورة 1">
+        </div>
+        <span>  السلاسل</span>
+    </a>
+    <a href="#kk" class="thumbnail-link">
+        <div class="thumbnail">
+            <img src="img/ACCESSORIES/k9.jpeg" alt="صورة 2">
+        </div>
+        <span>   الخواتم</span>
+    </a>
+    <a href="#mm" class="thumbnail-link">
+        <div class="thumbnail">
+            <img src="img/ACCESSORIES/m1.jpeg" alt="صورة 3">
+        </div>
+        <span>  مشابك الشعر</span>
+    </a>
+    <a href="#hh" class="thumbnail-link">
+        <div class="thumbnail">
+            <img src="img/ACCESSORIES/h4.jpeg" alt="صورة 4">
+        </div>
+        <span>   اكسسوارات</span>
+    </a>
+    
+  </div>
+  
+
+  <div class="section-title3">
+    <h2> السلاسل </h2>
+</div>
+
+  <div class="products-container" id="sel" >
+
+    <div class="product-card" data-name=" سلسلة" data-price="400" data-img="img/ACCESSORIES/s1.jpeg">
+      <img src="img/ACCESSORIES/s1.jpeg" alt="منتج 1">
+      <h3> سلسلة  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" سلسلة" data-price="400" data-img="img/ACCESSORIES/s2.jpeg">
+      <img src="img/ACCESSORIES/s2.jpeg" alt="منتج 2">
+      <h3> سلسلة  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" سلسلة" data-price="400" data-img="img/ACCESSORIES/s3.jpeg">
+      <img src="img/ACCESSORIES/s3.jpeg" alt="منتج 3">
+      <h3> سلسلة  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" سلسلة" data-price="400" data-img="img/ACCESSORIES/s4.jpeg">
+      <img src="img/ACCESSORIES/s4.jpeg" alt="منتج 4">
+      <h3> سلسلة  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" سلسلة" data-price="400" data-img="img/ACCESSORIES/s5.jpeg">
+      <img src="img/ACCESSORIES/s5.jpeg" alt="منتج 5">
+      <h3> سلسلة  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" سلسلة" data-price="400" data-img="img/ACCESSORIES/s6.jpeg">
+      <img src="img/ACCESSORIES/s6.jpeg" alt="منتج 6">
+      <h3> سلسلة  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" سلسلة" data-price="400" data-img="img/ACCESSORIES/s7.jpeg">
+      <img src="img/ACCESSORIES/s7.jpeg" alt="منتج 7">
+      <h3> سلسلة  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" سلسلة" data-price="400" data-img="img/ACCESSORIES/s8.jpeg">
+      <img src="img/ACCESSORIES/s8.jpeg" alt="منتج 8">
+      <h3> سلسلة  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" سلسلة" data-price="400" data-img="img/ACCESSORIES/s9.jpeg">
+      <img src="img/ACCESSORIES/s9.jpeg" alt="منتج 9">
+      <h3> سلسلة  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" سلسلة" data-price="400" data-img="img/ACCESSORIES/s10.jpeg">
+      <img src="img/ACCESSORIES/s10.jpeg" alt="منتج 10">
+      <h3> سلسلة  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" سلسلة" data-price="400" data-img="img/ACCESSORIES/s11.jpeg">
+      <img src="img/ACCESSORIES/s11.jpeg" alt="منتج 11">
+      <h3> سلسلة  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" سلسلة" data-price="400" data-img="img/ACCESSORIES/s12.jpeg">
+      <img src="img/ACCESSORIES/s12.jpeg" alt="منتج 12">
+      <h3> سلسلة  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+  </div>
+  <hr class="full-line">
+  
+
+  <div class="section-title3">
+    <h2> مشابك الشعر </h2>
+</div>
+
+  <div class="products-container" id="mm" >
+
+    <div class="product-card" data-name=" مشبك شعر" data-price="400" data-img="img/ACCESSORIES/m1.jpeg">
+      <img src="img/ACCESSORIES/m1.jpeg" alt="منتج 1">
+      <h3> مشابك شعر  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" مشبك شعر" data-price="400" data-img="img/ACCESSORIES/m2.jpeg">
+      <img src="img/ACCESSORIES/m2.jpeg" alt="منتج 2">
+      <h3> مشابك شعر  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" مشبك شعر" data-price="400" data-img="img/ACCESSORIES/m3.jpeg">
+      <img src="img/ACCESSORIES/m3.jpeg" alt="منتج 3">
+      <h3> مشابك شعر  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" مشبك شعر" data-price="400" data-img="img/ACCESSORIES/m4.jpeg">
+      <img src="img/ACCESSORIES/m4.jpeg" alt="منتج 4">
+      <h3> مشابك شعر  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" مشبك شعر" data-price="400" data-img="img/ACCESSORIES/m5.jpeg">
+      <img src="img/ACCESSORIES/m5.jpeg" alt="منتج 5">
+      <h3> مشابك شعر  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" مشبك شعر" data-price="400" data-img="img/ACCESSORIES/m6.jpeg">
+      <img src="img/ACCESSORIES/m6.jpeg" alt="منتج 6">
+      <h3> مشابك شعر  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" مشبك شعر" data-price="400" data-img="img/ACCESSORIES/m7.jpeg">
+      <img src="img/ACCESSORIES/m7.jpeg" alt="منتج 7">
+      <h3> مشابك شعر  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" مشبك شعر" data-price="400" data-img="img/ACCESSORIES/m8.jpeg">
+      <img src="img/ACCESSORIES/m8.jpeg" alt="منتج 8">
+      <h3> مشابك شعر  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" مشبك شعر" data-price="400" data-img="img/ACCESSORIES/m9.jpeg">
+      <img src="img/ACCESSORIES/m9.jpeg" alt="منتج 9">
+      <h3> مشابك شعر  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" مشبك شعر" data-price="400" data-img="img/ACCESSORIES/m10.jpeg">
+      <img src="img/ACCESSORIES/m10.jpeg" alt="منتج 10">
+      <h3> مشابك شعر  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" مشبك شعر" data-price="400" data-img="img/ACCESSORIES/m11.jpeg">
+      <img src="img/ACCESSORIES/m11.jpeg" alt="منتج 11">
+      <h3> مشابك شعر  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" مشبك شعر" data-price="400" data-img="img/ACCESSORIES/m12.jpeg">
+      <img src="img/ACCESSORIES/m12.jpeg" alt="منتج 12">
+      <h3> مشابك شعر  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" مشبك شعر" data-price="400" data-img="img/ACCESSORIES/m13.jpeg">
+      <img src="img/ACCESSORIES/m13.jpeg" alt="منتج 13">
+      <h3> مشابك شعر  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" مشبك شعر" data-price="400" data-img="img/ACCESSORIES/m14.jpeg">
+      <img src="img/ACCESSORIES/m14.jpeg" alt="منتج 14">
+      <h3> مشابك شعر  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" مشبك شعر" data-price="400" data-img="img/ACCESSORIES/m15.jpeg">
+      <img src="img/ACCESSORIES/m15.jpeg" alt="منتج 15">
+      <h3> مشابك شعر  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" مشبك شعر" data-price="400" data-img="img/ACCESSORIES/m16.jpeg">
+      <img src="img/ACCESSORIES/m16.jpeg" alt="منتج 16">
+      <h3> مشابك شعر  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name=" مشبك شعر" data-price="400" data-img="img/ACCESSORIES/m17.jpeg">
+      <img src="img/ACCESSORIES/m17.jpeg" alt="منتج 17">
+      <h3> مشابك شعر  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+  </div>
+  <hr class="full-line">
+
+ <div class="section-title3">
+    <h2> الخواتم </h2>
+</div>
+  
+    <div class="products-container" id="kk" >
+
+    <div class="product-card" data-name="  خاتم" data-price="400" data-img="img/ACCESSORIES/k1.jpeg">
+      <img src="img/ACCESSORIES/k1.jpeg" alt="منتج 1">
+      <h3>  خاتم  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name="  خاتم" data-price="400" data-img="img/ACCESSORIES/k2.jpeg">
+      <img src="img/ACCESSORIES/k2.jpeg" alt="منتج 2">
+      <h3>  خاتم  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name="  خاتم" data-price="400" data-img="img/ACCESSORIES/k3.jpeg">
+      <img src="img/ACCESSORIES/k3.jpeg" alt="منتج 3">
+      <h3>  خاتم  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name="  خاتم" data-price="400" data-img="img/ACCESSORIES/k4.jpeg">
+      <img src="img/ACCESSORIES/k4.jpeg" alt="منتج 4">
+      <h3>  خاتم  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name="  خاتم" data-price="400" data-img="img/ACCESSORIES/k5.jpeg">
+      <img src="img/ACCESSORIES/k5.jpeg" alt="منتج 5">
+      <h3>  خاتم  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name="  خاتم" data-price="400" data-img="img/ACCESSORIES/k6.jpeg">
+      <img src="img/ACCESSORIES/k6.jpeg" alt="منتج 6">
+      <h3>  خاتم  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name="  خاتم" data-price="400" data-img="img/ACCESSORIES/k7.jpeg">
+      <img src="img/ACCESSORIES/k7.jpeg" alt="منتج 7">
+      <h3>  خاتم  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name="  خاتم" data-price="400" data-img="img/ACCESSORIES/k8.jpeg">
+      <img src="img/ACCESSORIES/k8.jpeg" alt="منتج 8">
+      <h3>  خاتم  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name="  خاتم" data-price="400" data-img="img/ACCESSORIES/k9.jpeg">
+      <img src="img/ACCESSORIES/k9.jpeg" alt="منتج 9">
+      <h3>  خاتم  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    <div class="product-card" data-name="  خاتم" data-price="400" data-img="img/ACCESSORIES/k10.jpeg">
+      <img src="img/ACCESSORIES/k10.jpeg" alt="منتج 10">
+      <h3>  خاتم  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    </div>
+    <hr class="full-line">
+
+
+     <div class="section-title3">
+    <h2> اكسسوارات </h2>
+</div>
+  
+    <div class="products-container" id="hh" >
+
+    <div class="product-card" data-name="  حلق اكسسوار" data-price="400" data-img="img/ACCESSORIES/h1.jpeg">
+      <img src="img/ACCESSORIES/h1.jpeg" alt="منتج 1">
+      <h3>  حلق اكسسوار دهبي  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+     <div class="product-card" data-name="  حلق اكسسوار" data-price="400" data-img="img/ACCESSORIES/h2.jpeg">
+      <img src="img/ACCESSORIES/h2.jpeg" alt="منتج 2">
+      <h3>  حلق اكسسوار دهبي  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+     <div class="product-card" data-name="  حلق اكسسوار" data-price="400" data-img="img/ACCESSORIES/h3.jpeg">
+      <img src="img/ACCESSORIES/h3.jpeg" alt="منتج 3 ">
+      <h3>  حلق اكسسوار دهبي  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+     <div class="product-card" data-name="  انسيال " data-price="400" data-img="img/ACCESSORIES/h4.jpeg">
+      <img src="img/ACCESSORIES/h4.jpeg" alt="منتج 4">
+      <h3>    انسيال اكسسوار  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+     <div class="product-card" data-name="   انسيال" data-price="400" data-img="img/ACCESSORIES/h5.jpeg">
+      <img src="img/ACCESSORIES/h5.jpeg" alt="منتج 5">
+      <h3>    انسيال اكسسوار  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+     <div class="product-card" data-name="   اسورة" data-price="400" data-img="img/ACCESSORIES/h6.jpeg">
+      <img src="img/ACCESSORIES/h6.jpeg" alt="منتج 6">
+      <h3>     اسورة  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+     <div class="product-card" data-name="   اسورة" data-price="400" data-img="img/ACCESSORIES/h7.jpeg">
+      <img src="img/ACCESSORIES/h7.jpeg" alt="منتج 7">
+      <h3>     اسورة  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+     <div class="product-card" data-name="   تشكيلة نظارات مختلفة" data-price="400" data-img="img/ACCESSORIES/h8.jpeg">
+      <img src="img/ACCESSORIES/h8.jpeg" alt="منتج 8">
+      <h3>     تشكيلة نظارات   </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+     <div class="product-card" data-name="   نظارة شانل مودرن" data-price="400" data-img="img/ACCESSORIES/h9.jpeg">
+      <img src="img/ACCESSORIES/h9.jpeg" alt="منتج 9 ">
+      <h3>     نظارة شانل  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+     <div class="product-card" data-name="   نظارة" data-price="400" data-img="img/ACCESSORIES/h10.jpeg">
+      <img src="img/ACCESSORIES/h10.jpeg" alt="منتج 10">
+      <h3>     نظارة  </h3>
+      <p></p>
+      <p class="price" data-original-price="400">EG 400</p>
+      <button class="add-to-cart">إضافة إلى السلة</button>
+    </div>
+    
+  </div>
+  
+
+<!-- Footer -->
+ 
+  <footer class="footer">
+    <div class="container7">
+      <div class="column">
+        <h3 id="contact-title">Contact Information</h3>
+        <p>📞 <span id="phone-text">Phone:</span> <a href="tel:01212348798">01212348798</a></p>
+        <p>📞 <span id="phone-text">Phone:</span> <a href="tel:01017102110">01017102110</a></p>
+      </div>
+      <div class="column">
+        <h3 id="important-links">Important Links</h3>
+        <a href="#" id="privacy-policy">Privacy Policy</a>
+        <br>
+        <a href="#" id="terms-of-use">Terms of Use</a>
+      </div>
+      <div class="column social">
+        <h3 id="follow-us">Follow Us</h3>
+        <a href="https://www.facebook.com/share/16AodzZejo/"> <i class="fab fa-facebook-f"></i></a>
+        
+        
+        <br>
+        <a href="https://www.instagram.com/lafemme_woman?igsh=ejhuY3IybGpxanM4"> <i class="fab fa-instagram"></i></a>
+<br>
+<a href="https://www.tiktok.com/@osama.elbannan?_t=ZS-8uchrhB8KzY&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>      
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2025 <span id="all-rights">All Rights Reserved</span> | <span id="kgm-marketing">KGM Marketing</span>
+    </div>
+  </footer>
+
+  <script>
+
+ function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function scrollToBottom() {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  }
+
+ const cart = [];
+
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+      const productCard = button.closest('.product-card');
+      const name = productCard.dataset.name;
+      const price = parseFloat(productCard.dataset.price);
+      const img = productCard.dataset.img;
+
+      const existing = cart.find(item => item.name === name);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ name, price, quantity: 1, img });
+      }
+
+      renderCart();
+      updateCartCount();
+      openCart();
+    });
+  });
+
+  function renderCart() {
+    const cartItems = document.getElementById('cart-items');
+    cartItems.innerHTML = '';
+
+    cart.forEach((item, index) => {
+      const li = document.createElement('li');
+      li.classList.add('cart-item');
+
+      li.innerHTML = `
+    <img src="${item.img}" alt="${item.name}">
+    <div class="item-details">
+      <strong>${item.name}</strong> - ${item.price.toFixed(2)} EG
+      <div class="quantity-control">
+        <button class="decrease" data-index="${index}">-</button>
+        <span>${item.quantity}</span>
+        <button class="increase" data-index="${index}">+</button>
+        <button class="remove" data-index="${index}">🗑️</button>
+      </div>
+    </div>
+  `;
+
+      cartItems.appendChild(li);
+    });
+
+    // حساب السعر الإجمالي
+    const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+    // عرض السعر الإجمالي في العنصر المخصص (تأكد أن لديك عنصر بالمعرف total-price في الـ HTML)
+    const totalPriceElement = document.getElementById('total-price');
+    if (totalPriceElement) {
+      totalPriceElement.textContent = `السعر الإجمالي: ${totalPrice.toFixed(2)} EG`;
+    }
+
+    // إضافة مستمعات للأزرار بعد التحديث
+    document.querySelectorAll('#cart-items button.decrease').forEach(btn => {
+      btn.onclick = () => updateQuantity(+btn.dataset.index, -1);
+    });
+    document.querySelectorAll('#cart-items button.increase').forEach(btn => {
+      btn.onclick = () => updateQuantity(+btn.dataset.index, 1);
+    });
+    document.querySelectorAll('#cart-items button.remove').forEach(btn => {
+      btn.onclick = () => removeItem(+btn.dataset.index);
+    });
+  }
+
+  function updateQuantity(index, change) {
+    cart[index].quantity += change;
+    if (cart[index].quantity <= 0) {
+      cart.splice(index, 1);
+    }
+    renderCart();
+    updateCartCount();
+  }
+
+  function removeItem(index) {
+    cart.splice(index, 1);
+    renderCart();
+    updateCartCount();
+  }
+
+  document.getElementById('checkout').addEventListener('click', () => {
+    if (cart.length === 0) {
+      alert('السلة فارغة!');
+      return;
+    }
+
+    let message = '*طلب جديد من المتجر:*\n\n';
+    cart.forEach(item => {
+      message += `🛍️ *${item.name}*\nالكمية: ${item.quantity}\nالسعر: ${item.price.toFixed(2)} EG\nالصورة: ${window.location.origin}/${item.img}\n\n`;
+    });
+
+    // حساب السعر الإجمالي عند الإرسال أيضاً
+    const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    message += `\n*السعر الإجمالي: ${totalPrice.toFixed(2)} EG*`;
+
+    const phoneNumber = "+201276357603"; // رقم المتجر بدون +
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  });
+
+  function updateCartCount() {
+    const count = cart.reduce((total, item) => total + item.quantity, 0);
+    const cartCount = document.getElementById('cart-count');
+    if (cartCount) {
+      cartCount.textContent = count;
+      cartCount.style.display = count > 0 ? 'inline' : 'none';
+    }
+  }
+
+  const cartIcon = document.getElementById('cart-icon');
+  const cartPopup = document.getElementById('cart-popup');
+
+  cartIcon.addEventListener('click', (e) => {
+    e.stopPropagation();
+    cartPopup.classList.toggle('open');
+  });
+
+  document.addEventListener('click', () => {
+    cartPopup.classList.remove('open');
+  });
+
+  cartPopup.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+
+  function openCart() {
+    cartPopup.classList.add('open');
+  }
+
+  </script>
+</body>
+</html>
