@@ -637,7 +637,7 @@
       <p class="price" data-original-price="20">EG 20</p>
       <button class="add-to-cart">إضافة إلى السلة</button>
     </div>
-    <div class="product-card" data-name=" 2مشبك شعر" data-price="400" data-img="img/ACCESSORIES/m2.jpeg" data-section="mashbak">
+    <div class="product-card" data-name=" 2مشبك شعر" data-price="20" data-img="img/ACCESSORIES/m2.jpeg" data-section="mashbak">
       <img src="img/ACCESSORIES/m2.jpeg" alt="منتج 2">
       <h3> مشابك شعر  </h3>
       <p></p>
@@ -1039,14 +1039,15 @@
       cartItems.appendChild(li);
     });
 
-    // حساب السعر الإجمالي
-    const totalPrice = cart.reduce((sum, item) => (sum + item.price * item.quantity) * 0.90, 0);
+   const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const discount = totalPrice * 0.10;
+    const discountedPrice = totalPrice - discount;
 
-    // عرض السعر الإجمالي في العنصر المخصص (تأكد أن لديك عنصر بالمعرف total-price في الـ HTML)
     const totalPriceElement = document.getElementById('total-price');
     if (totalPriceElement) {
-      totalPriceElement.textContent = `السعر الإجمالي بعد الخصم: ${totalPrice.toFixed(2)} EG`;
+      totalPriceElement.textContent = `السعر الإجمالي بعد الخصم: ${discountedPrice.toFixed(2)} EG`;
     }
+
 
     // إضافة مستمعات للأزرار بعد التحديث
     document.querySelectorAll('#cart-items button.decrease').forEach(btn => {
@@ -1089,9 +1090,13 @@
       message += `🛍️ *${item.name}*\nالكمية: ${item.quantity}\nالسعر: ${item.price.toFixed(2)} EG\n🖼️ الصورة: ${fullImgUrl}\n\n`;
     });
 
-    const totalPrice = cart.reduce((sum, item) => (sum + item.price * item.quantity) * 0.90, 0);
-    message += `\n*💵 السعر الإجمالي بعد الخصم: ${totalPrice.toFixed(2)} EG*`;
-    document.getElementById('cart-popup').classList.remove('open');
+    const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const discount = totalPrice * 0.10;
+    const discountedPrice = totalPrice - discount;
+    message += `\n*💵 السعر الإجمالي قبل الخصم: ${totalPrice.toFixed(2)} EG*`;
+    message += `\n*🔻 خصم 10%: ${discount.toFixed(2)} EG*`;
+    message += `\n*💰 السعر بعد الخصم: ${discountedPrice.toFixed(2)} EG*`;
+        document.getElementById('cart-popup').classList.remove('open');
 
     openConfirmation(message);
   });
@@ -1291,9 +1296,13 @@
 
     // الضغط على منتج لفتح النافذة
     document.body.addEventListener("click", function (e) {
+      // تحقق ما إذا كان الزر المضغوط هو زر "إضافة إلى السلة"
+      if (e.target.classList.contains("add-to-cart")) return;
+
       const productCard = e.target.closest(".product-card");
       if (productCard) openModal(productCard);
     });
+
 
     // الضغط على منتج مشابه داخل النافذة
     modal.addEventListener("click", function (e) {

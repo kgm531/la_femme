@@ -1331,8 +1331,11 @@
       document.body.classList.add("no-scroll");
     }
 
-    // الضغط على منتج لفتح النافذة
+   // الضغط على منتج لفتح النافذة
     document.body.addEventListener("click", function (e) {
+      // تحقق ما إذا كان الزر المضغوط هو زر "إضافة إلى السلة"
+      if (e.target.classList.contains("add-to-cart")) return;
+
       const productCard = e.target.closest(".product-card");
       if (productCard) openModal(productCard);
     });
