@@ -990,8 +990,10 @@
       <span class="close-btn" id="closeModal">&times;</span>
       <div class="modal-product-info">
         <img id="modalProductImg" src="" alt="Product Image">
+        
         <h3 id="modalProductName"></h3>
         <p id="modalProductPrice"></p>
+
       </div>
       <div class="similar-products" id="similarProducts">
         <h4>منتجات مشابهة</h4>
@@ -1080,7 +1082,7 @@
     });
 
     // حساب السعر الإجمالي
-    const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const totalPrice = cart.reduce((sum, item) => (sum + item.price * item.quantity) * 0.90, 0);
 
     // عرض السعر الإجمالي في العنصر المخصص (تأكد أن لديك عنصر بالمعرف total-price في الـ HTML)
     const totalPriceElement = document.getElementById('total-price');
