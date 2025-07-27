@@ -1204,14 +1204,15 @@
             cartItems.appendChild(li);
         });
 
-        // حساب السعر الإجمالي
-        const totalPrice = cart.reduce((sum, item) => (sum + item.price * item.quantity) * 0.90, 0);
+        const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+        const discount = totalPrice * 0.10;
+        const discountedPrice = totalPrice - discount;
 
-        // عرض السعر الإجمالي في العنصر المخصص (تأكد أن لديك عنصر بالمعرف total-price في الـ HTML)
         const totalPriceElement = document.getElementById('total-price');
         if (totalPriceElement) {
-            totalPriceElement.textContent = `السعر الإجمالي بعد الخصم: ${totalPrice.toFixed(2)} EG`;
+            totalPriceElement.textContent = `السعر الإجمالي بعد الخصم: ${discountedPrice.toFixed(2)} EG`;
         }
+
 
         // إضافة مستمعات للأزرار بعد التحديث
         document.querySelectorAll('#cart-items button.decrease').forEach(btn => {
@@ -1254,8 +1255,12 @@
             message += `🛍️ *${item.name}*\nالكمية: ${item.quantity}\nالسعر: ${item.price.toFixed(2)} EG\n🖼️ الصورة: ${fullImgUrl}\n\n`;
         });
 
-        const totalPrice = cart.reduce((sum, item) => (sum + item.price * item.quantity) * 0.90, 0);
-        message += `\n*💵 السعر الإجمالي بعد الخصم: ${totalPrice.toFixed(2)} EG*`;
+        const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+        const discount = totalPrice * 0.10;
+        const discountedPrice = totalPrice - discount;
+        message += `\n*💵 السعر الإجمالي قبل الخصم: ${totalPrice.toFixed(2)} EG*`;
+        message += `\n*🔻 خصم 10%: ${discount.toFixed(2)} EG*`;
+        message += `\n*💰 السعر بعد الخصم: ${discountedPrice.toFixed(2)} EG*`;
         document.getElementById('cart-popup').classList.remove('open');
 
         openConfirmation(message);
@@ -1463,6 +1468,7 @@
             if (productCard) openModal(productCard);
         });
 
+
         // الضغط على منتج مشابه داخل النافذة
         modal.addEventListener("click", function (e) {
             const simItem = e.target.closest(".similar-item");
@@ -1478,6 +1484,7 @@
         });
     });
 </script>
+
 </body>
 
 </html>
