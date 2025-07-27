@@ -982,7 +982,7 @@
       </div>
     </div>
   </div>
-
+  
 <script>
 
   function scrollToTop() {
@@ -1024,28 +1024,28 @@
       li.classList.add('cart-item');
 
       li.innerHTML = `
-       <img src="${item.img}" alt="${item.name}">
-       <div class="item-details">
-         <strong>${item.name}</strong> - ${item.price.toFixed(2)} EG
-         <div class="quantity-control">
-           <button class="decrease" data-index="${index}">-</button>
-           <span>${item.quantity}</span>
-           <button class="increase" data-index="${index}">+</button>
-           <button class="remove" data-index="${index}">🗑️</button>
+         <img src="${item.img}" alt="${item.name}">
+         <div class="item-details">
+           <strong>${item.name}</strong> - ${item.price.toFixed(2)} EG
+           <div class="quantity-control">
+             <button class="decrease" data-index="${index}">-</button>
+             <span>${item.quantity}</span>
+             <button class="increase" data-index="${index}">+</button>
+             <button class="remove" data-index="${index}">🗑️</button>
+           </div>
          </div>
-       </div>
-     `;
+       `;
 
       cartItems.appendChild(li);
     });
 
     // حساب السعر الإجمالي
-    const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const totalPrice = cart.reduce((sum, item) => (sum + item.price * item.quantity) * 0.90, 0);
 
     // عرض السعر الإجمالي في العنصر المخصص (تأكد أن لديك عنصر بالمعرف total-price في الـ HTML)
     const totalPriceElement = document.getElementById('total-price');
     if (totalPriceElement) {
-      totalPriceElement.textContent = `السعر الإجمالي: ${totalPrice.toFixed(2)} EG`;
+      totalPriceElement.textContent = `السعر الإجمالي بعد الخصم: ${totalPrice.toFixed(2)} EG`;
     }
 
     // إضافة مستمعات للأزرار بعد التحديث
@@ -1089,8 +1089,8 @@
       message += `🛍️ *${item.name}*\nالكمية: ${item.quantity}\nالسعر: ${item.price.toFixed(2)} EG\n🖼️ الصورة: ${fullImgUrl}\n\n`;
     });
 
-    const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    message += `\n*💵 السعر الإجمالي: ${totalPrice.toFixed(2)} EG*`;
+    const totalPrice = cart.reduce((sum, item) => (sum + item.price * item.quantity) * 0.90, 0);
+    message += `\n*💵 السعر الإجمالي بعد الخصم: ${totalPrice.toFixed(2)} EG*`;
     document.getElementById('cart-popup').classList.remove('open');
 
     openConfirmation(message);
@@ -1310,6 +1310,5 @@
     });
   });
 </script>
-   
 </body>
 </html>
