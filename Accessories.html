@@ -944,29 +944,24 @@
   </footer>
 
   <!-- نافذة المودال -->
-<!-- نافذة المنتج -->
-<div class="product-modal" id="productModal">
-  <div class="modal-content">
-    <span class="close-btn" id="closeModal">&times;</span>
-
-    <div class="modal-product-info">
-      <img id="modalProductImg" src="" alt="Product Image">
-      <h3 id="modalProductName"></h3>
-      <p id="modalProductPrice"></p>
-
-      <!-- زر الإضافة للسلة -->
-      <button class="add-to-cart modal-add-to-cart" id="modalAddToCartBtn">إضافة إلى السلة</button>
-    </div>
-
-    <div class="similar-products" id="similarProducts">
-      <h4>منتجات مشابهة</h4>
-      <div class="products-container" id="similarContainer">
-        <!-- سيتم تعبئتها تلقائيًا -->
+  <!-- نافذة المنتج -->
+  <div class="product-modal" id="productModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <div class="modal-product-info">
+        <img id="modalProductImg" src="" alt="Product Image">
+        <h3 id="modalProductName"></h3>
+        <p id="modalProductPrice"></p>
+      </div>
+      <div class="similar-products" id="similarProducts">
+        <h4>منتجات مشابهة</h4>
+        <div class="products-container" id="similarContainer">
+          <!-- سيتم تعبئتها تلقائيًا -->
+        </div>
       </div>
     </div>
   </div>
-</div>
-
+  
   
   <!-- صفحة تأكيد الطلب -->
   <div id="confirmationPage" class="confirmation-modal" style="display:none;">
@@ -987,7 +982,7 @@
       </div>
     </div>
   </div>
-
+  
 <script>
 
   function scrollToTop() {
