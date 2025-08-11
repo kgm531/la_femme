@@ -1921,6 +1921,10 @@
 
             const productCard = e.target.closest(".product-card");
             if (productCard) openModal(productCard);
+            
+            if (e.target.classList.contains("close-modal")) {
+                closeModal();
+            }
         });
 
 
