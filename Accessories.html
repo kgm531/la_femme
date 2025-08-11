@@ -952,6 +952,8 @@
         <img id="modalProductImg" src="" alt="Product Image">
         <h3 id="modalProductName"></h3>
         <p id="modalProductPrice"></p>
+              <button class="add-to-cart">إضافة إلى السلة</button>
+
       </div>
       <div class="similar-products" id="similarProducts">
         <h4>منتجات مشابهة</h4>
@@ -1039,7 +1041,7 @@
       cartItems.appendChild(li);
     });
 
-   const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     const discount = totalPrice * 0.10;
     const discountedPrice = totalPrice - discount;
 
@@ -1096,7 +1098,7 @@
     message += `\n*💵 السعر الإجمالي قبل الخصم: ${totalPrice.toFixed(2)} EG*`;
     message += `\n*🔻 خصم 10%: ${discount.toFixed(2)} EG*`;
     message += `\n*💰 السعر بعد الخصم: ${discountedPrice.toFixed(2)} EG*`;
-        document.getElementById('cart-popup').classList.remove('open');
+    document.getElementById('cart-popup').classList.remove('open');
 
     openConfirmation(message);
   });
@@ -1249,7 +1251,7 @@
 
     function openModal(productCard) {
       const name = productCard.dataset.name;
-      const price = productCard.dataset.price;
+      const price = parseFloat(productCard.dataset.price);
       const img = productCard.dataset.img;
       const sectionId = productCard.dataset.section;
 
@@ -1258,41 +1260,56 @@
       const similarProducts = Array.from(section.querySelectorAll(".product-card"))
         .filter(p => p !== productCard)
         .sort(() => 0.5 - Math.random()) // ترتيب عشوائي
-        .slice(0, 3); // نعرض 4 منتجات عشوائية كحد أقصى
-
+        .slice(0, 3); // 3 منتجات عشوائية فقط
 
       modal.innerHTML = `
-          <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <div class="modal-main-section">
-              <div class="modal-image-container">
-                <img src="${img}" alt="${name}" class="main-image" />
-              </div>
-              <div class="modal-details">
-                <h2>${name}</h2>
-                <p class="modal-price">السعر: EG ${price}</p>
-                <h3>منتجات مشابهة</h3>
-                <div class="similar-products">
-                  ${similarProducts.map(sim => `
-                    <div class="similar-item" 
-                         data-name="${sim.dataset.name}" 
-                         data-price="${sim.dataset.price}" 
-                         data-img="${sim.dataset.img}" 
-                         data-section="${sim.dataset.section}">
-                      <img src="${sim.dataset.img}" alt="${sim.dataset.name}" />
-                      <p>${sim.dataset.name}</p>
-                      <span>EG ${sim.dataset.price}</span>
-                    </div>
-                  `).join('')}
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="modal-main-section">
+          <div class="modal-image-container">
+            <img src="${img}" alt="${name}" class="main-image" />
+          </div>
+          <div class="modal-details">
+            <h2>${name}</h2>
+            <p class="modal-price">السعر: EG ${price}</p>
+            <button class="add-to-cart">إضافة إلى السلة</button>
+            <h3>منتجات مشابهة</h3>
+            <div class="similar-products">
+              ${similarProducts.map(sim => `
+                <div class="similar-item" 
+                     data-name="${sim.dataset.name}" 
+                     data-price="${sim.dataset.price}" 
+                     data-img="${sim.dataset.img}" 
+                     data-section="${sim.dataset.section}">
+                  <img src="${sim.dataset.img}" alt="${sim.dataset.name}" />
+                  <p>${sim.dataset.name}</p>
+                  <span>EG ${sim.dataset.price}</span>
                 </div>
-              </div>
+              `).join('')}
             </div>
           </div>
-        `;
+        </div>
+      </div>
+    `;
 
       modal.style.display = "flex";
       document.body.classList.add("no-scroll");
+
+      // ✅ ربط زر "إضافة إلى السلة" داخل النافذة
+      modal.querySelector(".add-to-cart").addEventListener("click", () => {
+        const existing = cart.find(item => item.name === name);
+        if (existing) {
+          existing.quantity += 1;
+        } else {
+          cart.push({ name, price, quantity: 1, img });
+        }
+
+        renderCart();
+        updateCartCount();
+        openCart();
+      });
     }
+
 
     // الضغط على منتج لفتح النافذة
     document.body.addEventListener("click", function (e) {
@@ -1302,6 +1319,7 @@
       const productCard = e.target.closest(".product-card");
       if (productCard) openModal(productCard);
     });
+
 
     // الضغط على منتج مشابه داخل النافذة
     modal.addEventListener("click", function (e) {
