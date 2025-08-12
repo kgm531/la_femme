@@ -1829,18 +1829,11 @@
         modal.style.display = "none";
         document.body.appendChild(modal);
 
-        modal.addEventListener("click", (e) => {
-            // إغلاق عند النقر خارج المحتوى
-            if (e.target.classList.contains("product-modal")) {
-                closeModal();
-            }
-
-            // إغلاق عند النقر على زر الإغلاق أو أي عنصر بداخله
-            if (e.target.closest(".close-btn")) {
+       modal.addEventListener("click", (e) => {
+            if (e.target.classList.contains("product-modal") || e.target.closest(".close-btn")) {
                 closeModal();
             }
         });
-
 
         document.addEventListener("keydown", (e) => {
             if (e.key === "Escape") closeModal();
@@ -1922,9 +1915,6 @@
             const productCard = e.target.closest(".product-card");
             if (productCard) openModal(productCard);
             
-            if (e.target.classList.contains("close-modal")) {
-                closeModal();
-            }
         });
 
 

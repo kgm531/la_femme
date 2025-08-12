@@ -989,15 +989,22 @@ button:hover {
 .close-btn {
   position: absolute;
   top: 10px;
-  right: 20px;
+  right: 2px;
   font-size: 30px;
   cursor: pointer;
-  color: #ffffff;
-  transition: color 0.2s ease;
-  
+  color: #333;
+  /* لون غامق عشان يبان */
+  background: transparent;
+  padding: 5px 10px;
+  /* مساحة أكبر للنقر */
+  border-radius: 5px;
+  transition: background 0.2s ease, color 0.2s ease;
+  z-index: 2000;
+  /* فوق كل العناصر */
 }
 
 .close-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
   color: #000;
 }
 
@@ -1086,9 +1093,9 @@ button:hover {
     background: #2e2e2e;
   }
 
-  .close-btn {
-    color: #ffffff;
-  }
+    .close-btn {
+      color: #fff;
+    }
 }
 
 /* الشاشات الصغيرة */
@@ -1121,16 +1128,7 @@ button:hover {
   .similar-item img {
     max-height: 120px;
   }
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 30px;
-      cursor: pointer;
-      color: #ffffff;
-      transition: color 0.2s ease;
   
-    }
 }
 
 /*****************************************/
