@@ -16,8 +16,23 @@
 <body>
 <!--hash-->
 <div class="hash">
-<h3>متاح التوصيل  والشحن  لجميع  المحافظات </h3>
+<h3>يوجد خصم 10% علي جميع المنتجات</h3>
 </div>
+
+<!-- أيقونة السلة العائمة -->
+<div class="cart-icon" id="cart-icon">
+  🛒
+  <span id="cart-count">0</span>
+</div>
+
+<!-- محتوى السلة المنبثق -->
+<div class="cart-popup" id="cart-popup">
+  <h2>🛒 سلة المشتريات</h2>
+  <ul id="cart-items"></ul>
+  <div id="total-price" style="font-weight:bold; margin-top:10px;"></div>
+  <button id="checkout">إتمام الشراء عبر واتساب</button>
+</div>
+
 
 <!--whatsapp icon-->
 <a href="https://wa.me/01212348798" class="whatsapp-float" target="_blank">
@@ -271,5 +286,6 @@
 
 
  </script>
+<script src="script.js"></script>
 </body>
 </html>
