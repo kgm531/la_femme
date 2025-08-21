@@ -34,6 +34,7 @@
 </div>
 
 
+
 <!--whatsapp icon-->
 <a href="https://wa.me/01212348798" class="whatsapp-float" target="_blank">
   <i class="fab fa-whatsapp"></i>
@@ -257,6 +258,25 @@
     </div>
   </footer>
 
+  <div id="confirmationPage" class="confirmation-modal" style="display:none;">
+    <div class="confirmation-content">
+      <h3>تأكيد الطلب</h3>
+      <label>📍 العنوان *</label>
+      <input type="text" id="userAddress" placeholder="اكتب العنوان" required>
+  
+      <label>📞 رقم الموبايل *</label>
+      <input type="tel" id="userPhone" placeholder="اكتب رقم الهاتف" required>
+  
+      <label>📝 ملاحظات (اختياري)</label>
+      <textarea id="userNotes" placeholder="اكتب أي ملاحظات..."></textarea>
+  
+      <div style="margin-top: 15px; text-align: center;">
+        <button onclick="sendOrder()">تأكيد الطلب</button>
+        <button onclick="closeConfirmation()">إلغاء</button>
+      </div>
+    </div>
+  </div>
+  
   <script>
     const slides = document.querySelectorAll(".poster img");
     let current = 0;
