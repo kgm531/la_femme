@@ -116,7 +116,43 @@
       <a href="services.html" class="btn-primary">ابدئي الآن</a>
     </div>
   </section>
- 
+
+<section class="video-section">
+<h2>🎥 فيديوهات منتجاتنا</h2>
+<div class="video-container">
+
+  <div class="video-card">
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline>
+        <source src="img/1.1.mp4" type="video/mp4">
+        متصفحك لا يدعم تشغيل الفيديو.
+      </video>
+      <button class="mute-btn">🔇</button>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline>
+        <source src="img/2.1.mp4" type="video/mp4">
+        متصفحك لا يدعم تشغيل الفيديو.
+      </video>
+      <button class="mute-btn">🔇</button>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline>
+        <source src="img/1.2.mp4" type="video/mp4">
+        متصفحك لا يدعم تشغيل الفيديو.
+      </video>
+      <button class="mute-btn">🔇</button>
+    </div>
+  </div>
+
+</div>
+</section>
 
   <!-- Services Section -->
   <section class="services">
@@ -278,6 +314,57 @@
   </div>
   
   <script>
+    document.querySelectorAll(".video-card").forEach(card => {
+        const video = card.querySelector("video");
+        const btn = card.querySelector(".mute-btn");
+
+        // 🔄 دالة لميوت باقي الفيديوهات
+        function muteOthers(currentVideo) {
+          document.querySelectorAll(".video-card video").forEach(v => {
+            if (v !== currentVideo) {
+              v.muted = true;
+              const otherBtn = v.closest(".video-card").querySelector(".mute-btn");
+              if (otherBtn) otherBtn.textContent = "🔇";
+            }
+          });
+        }
+
+        // ✅ عند الضغط على الفيديو نفسه
+        video.addEventListener("click", async () => {
+          if (video.muted) {
+            muteOthers(video); // اعمل ميوت للباقي
+            video.muted = false;
+            try {
+              await video.play();
+              btn.textContent = "🔊";
+            } catch (err) {
+              console.error("المتصفح منع تشغيل الصوت:", err);
+            }
+          } else {
+            video.muted = true;
+            btn.textContent = "🔇";
+          }
+        });
+
+        // ✅ عند الضغط على زر الصوت
+        btn.addEventListener("click", async (e) => {
+          e.stopPropagation();
+          if (video.muted) {
+            muteOthers(video); // اعمل ميوت للباقي
+            video.muted = false;
+            try {
+              await video.play();
+              btn.textContent = "🔊";
+            } catch (err) {
+              console.error("المتصفح منع تشغيل الصوت:", err);
+            }
+          } else {
+            video.muted = true;
+            btn.textContent = "🔇";
+          }
+        });
+      });
+
     const slides = document.querySelectorAll(".poster img");
     let current = 0;
 
@@ -303,7 +390,9 @@
     });
 
     
+ 
 
+    
 
  </script>
 <script src="script.js"></script>
