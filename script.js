@@ -290,7 +290,7 @@ function sendOrder() {
         finalMessage += `\n📝 ملاحظات: ${notes}`;
     }
 
-    const whatsappUrl = `https://wa.me/201017102110?text=${encodeURIComponent(finalMessage)}`;
+    const whatsappUrl = `https://wa.me/201275339284?text=${encodeURIComponent(finalMessage)}`;
     window.open(whatsappUrl, '_blank');
     closeConfirmation();
 }
